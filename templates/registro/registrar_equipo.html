@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Enlace al archivo de estilos CSS específico para el formulario -->
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<div class="col">
+    <!-- Incluir mensajes de error o éxito generados por el sistema -->
+    {% include 'messages.html' %}
+
+    <div class="container">
+      <h2 class="my-3">Registrar Equipo</h2>
+      <form method="post">
+          {% csrf_token %}
+          <div class="row">
+              <div class="col-md-3">
+                  <label for="{{ form.serial_contabilidad.id_for_label }}">Serial Contabilidad</label>
+                  {{ form.serial_contabilidad }}
+              </div>
+
+              <div class="col-md-3">
+                  <label for="{{ form.marca.id_for_label }}">Marca equipo</label>
+                  {{ form.marca }}
+              </div>
+
+              <div class="col-md-3">
+                <label for="{{ form.modelo.id_for_label }}">Modelo</label>
+                {{ form.modelo }}
+              </div>
+
+              <div class="col-md-3">
+                <label for="{{ form.serial.id_for_label }}">Serial equipo</label>
+                {{ form.serial }}
+              </div>
+          </div>
+  
+          <div class="row mt-3">
+            <div class="col-md-3">
+              <label for="{{ form.procesador.id_for_label }}">Procesador</label>
+              {{ form.procesador }}
+            </div>
+
+              <div class="col-md-2">
+                  <label for="{{ form.memoria_ram.id_for_label }}">Tamaño memoria RAM</label>
+                  {{ form.memoria_ram }}
+              </div>
+
+              <div class="col-md-2">
+                <label for="{{ form.capacidad_max.id_for_label }}">Capacidad Máxima</label>
+                {{ form.capacidad_max }}
+              </div>
+
+              <div class="col-md-2">
+                <label for="{{ form.tipo.id_for_label }}">Tipo</label>
+                {{ form.tipo }}
+              </div>
+
+              <div class="col-md-3">
+                <label for="{{ form.capacidad_max.id_for_label }}">Velocidad memoria ram</label>
+                {{ form.velocidad }}
+              </div>
+
+          </div>
+  
+          <div class="row mt-3">
+              <div class="col-md-3">
+                  <label for="{{ form.capacidad_max.id_for_label }}">Tpo de disco duro</label>
+                  {{ form.disco_duro }}
+              </div>
+
+              <div class="col-md-3">
+                <label for="{{ form.capacidad_max.id_for_label }}">Capacidad</label>
+                {{ form.capacidad }}
+              </div>
+
+              <div class="col-md-3">
+                <label for="{{ form.capacidad_max.id_for_label }}">Version de windows</label>
+                {{ form.version_windows }}
+              </div>
+
+              <div class="col-md-3">
+                <label for="{{ form.capacidad_max.id_for_label }}">Clave de windows</label>
+                {{ form.clave_windows }}
+              </div>
+              
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-4">
+                <label for="{{ form.capacidad_max.id_for_label }}">Version de office</label>
+                {{ form.version_office }}
+            </div>
+
+            <div class="col-md-4">
+              <label for="{{ form.capacidad_max.id_for_label }}">Clave de office</label>
+              {{ form.clave_office }}
+            </div>
+
+            <div class="col-md-4">
+              <label for="{{ form.capacidad_max.id_for_label }}">Ip del equipo</label>
+              {{ form.ip }}
+            </div>
+
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-4">
+                <label for="{{ form.capacidad_max.id_for_label }}"> Numero de any desk</label>
+                {{ form.any_desk }}
+            </div>
+
+            <div class="col-md-4">
+              <label for="{{ form.capacidad_max.id_for_label }}">clave administrador any desk</label>
+              {{ form.clave_admin }}
+            </div>
+
+            <div class="col-md-4">
+              <label for="{{ form.capacidad_max.id_for_label }}">Funcionario a cargo del equipo</label>
+              {{ form.funcionario_a_cargo }}
+            </div>
+            
+          </div>
+  
+          <div class="row mt-3">
+              <div class="col-md-12">
+                  <label for="{{ form.observaciones.id_for_label }}">Observaciones</label>
+                  {{ form.observaciones }}
+              </div>
+          </div>
+
+          <div class="row mt-3" style="display: none;">
+            <div class="col-md-12">
+                <label for="{{ form.funcionario_registra.id_for_label }}">Funcionario Registra</label>
+                {{ form.funcionario_registra }}
+            </div>
+          </div>
+        
+  
+          <div class="row mt-4">
+              <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-success">Guardar</button>
+              </div>
+          </div>
+      </form>
+  </div>
+  
+    
+</div>
+
+
+{% endblock %}

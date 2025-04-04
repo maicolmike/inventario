@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lista de Equipos</h2>
+<table border="1">
+    <tr>
+        <th>Serial</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Procesador</th>
+        <th>Memoria RAM</th>
+        <th>IP</th>
+        <th>Funcionario a Cargo</th>
+    </tr>
+    {% for equipo in equipos %}
+    <tr>
+        <td>{{ equipo.serial }}</td>
+        <td>{{ equipo.marca }}</td>
+        <td>{{ equipo.modelo }}</td>
+        <td>{{ equipo.procesador }}</td>
+        <td>{{ equipo.memoria_ram }}</td>
+        <td>{{ equipo.ip }}</td>
+        <td>{{ equipo.funcionario_a_cargo }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'consulta',
+    'registro',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +92,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'habilesInhabiles',
+        'NAME': 'mantenimientos',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
