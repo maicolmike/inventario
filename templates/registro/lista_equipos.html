@@ -6,7 +6,7 @@
     <div class="card shadow table-responsive">
         <div class="card-body table-responsive">
             {% include 'messages.html' %}
-            <h4 style="text-align: center;"><b>Listado de Inventario</b></h4>
+            <h4 style="text-align: center;"><b>Listado de equipos</b></h4>
             <table id="example1" class="table table-bordered table-hover">
                 <thead class="table-secondary">
                     <tr>
@@ -31,6 +31,8 @@
                         <th>Funcionario a Cargo</th>
                         <th>Observaciones</th>
                         <th>Funcionario Registra</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +59,18 @@
                         <td>{{ equipo.funcionario_a_cargo }}</td>
                         <td>{{ equipo.observaciones }}</td>
                         <td>{{ equipo.funcionario_registra }}</td>
+                        <td style="text-align: center;">
+                            <a href="{% url 'editar_equipo' equipo.id %}" class="btn btn-success btn-sm">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="{% url 'eliminar_equipo' equipo.id %}" class="btn btn-danger btn-sm" 
+                               onclick="return confirm('¿Estás seguro de que quieres eliminar este equipo?');">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
