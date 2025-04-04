@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<!-- Importa el CSS de FontAwesome y Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<div class="login-container container mt-3">
+  <form class="form-signin" action="" method="post">
+    {% csrf_token %}  <!--para que no genere error-->
+    <div class="avatar">
+        <img src="{% static 'img/logoCootep.png' %}" alt="">
+    </div>
+    <h1 class="h3 mb-3 font-weight-normal">App convenios COOTEP</h1>
+   <!-- Campo Usuario -->
+        <div class="input-group">
+            <i class="fas fa-user"></i> <!-- Ícono de usuario -->
+            <!-- <input type="text" name="username" placeholder="Usuario" required> -->
+            {{ form.username }}
+        </div>
+        
+        <!-- Campo Password -->
+        <div class="input-group">
+            <i class="fas fa-lock"></i> <!-- Ícono de candado -->
+            <!-- <input type="password" name="password" placeholder="Password" required> -->
+            {{ form.password }}
+        </div>
+
+    <button type="submit" class="btn btn-lg btn-success login-button" >LOGIN</button>  <!-- style="background-color:rgb(4,105,4);" -->
+        <!-- Enlace para recuperar contraseña -->
+        <a href="{% url 'recuperar_clave' %}" class="forgot-password">Recordar contraseña</a>
+        
+        
+  </form>
+
+   <!-- Footer -->
+    <footer>
+        <p class="CopyRight text-muted mt-3" style="font-size: 12px;"> &copy; <span id="anio_actual"></span> COOTEP<br> Diseñado por Ing de sistemas Maicol Yela Valencia</p>
+    </footer>
+    
+  <script src="{% static 'js/anio.js' %}"></script>
+
+</div>
+
+<div class="mensajes">
+    {% include 'messages.html' %}
+</div>
+
+{% endblock %}

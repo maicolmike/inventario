@@ -1,0 +1,32 @@
+/* Estilo para alinear mejor el título con el input */
+h1 {
+  margin-bottom: 1033330px; /* Reduce la separación del título */
+}
+
+/* Estilos para el formulario */
+.form-create input {
+  margin-top: -5px; /* Ajusta el espacio entre el input y el título */
+  margin-bottom: 20px; /* Espacio inferior */
+  font-size: 16px; /* Tamaño de la letra */
+  max-width: 330px; /* Ancho máximo */
+  padding: 8px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo */
+}
+
+
+* Estilos específicos para input[type="number"] */
+.form-create input[type="number"] {
+  appearance: none;         /* Eliminar estilos predeterminados */
+  -moz-appearance: none;    /* Firefox */
+  -webkit-appearance: none; /* Chrome, Safari */
+  text-align: left;         /* Alinear texto a la izquierda */
+}
+
+/* Eliminar flechas en navegadores basados en WebKit (Chrome, Safari) */
+.form-create input[type="number"]::-webkit-inner-spin-button,
+.form-create input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
+  margin: 0;
+}
