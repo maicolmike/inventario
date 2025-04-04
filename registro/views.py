@@ -18,7 +18,6 @@ def registrar_equipo(request):
         form = EquipoForm()
     return render(request, 'registro/registrar_equipo.html', {'form': form})
 
-
 @login_required
 def lista_equipos(request):
     equipos = Equipo.objects.all()

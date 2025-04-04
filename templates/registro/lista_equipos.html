@@ -1,27 +1,68 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-<h2>Lista de Equipos</h2>
-<table border="1">
-    <tr>
-        <th>Serial</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        <th>Procesador</th>
-        <th>Memoria RAM</th>
-        <th>IP</th>
-        <th>Funcionario a Cargo</th>
-    </tr>
-    {% for equipo in equipos %}
-    <tr>
-        <td>{{ equipo.serial }}</td>
-        <td>{{ equipo.marca }}</td>
-        <td>{{ equipo.modelo }}</td>
-        <td>{{ equipo.procesador }}</td>
-        <td>{{ equipo.memoria_ram }}</td>
-        <td>{{ equipo.ip }}</td>
-        <td>{{ equipo.funcionario_a_cargo }}</td>
-    </tr>
-    {% endfor %}
-</table>
+{% block sinNada %}
+<div class="container-fluid" style="padding-top: 35px;padding-left: 50px;padding-right: 50px;">
+    <div class="card shadow table-responsive">
+        <div class="card-body table-responsive">
+            {% include 'messages.html' %}
+            <h4 style="text-align: center;"><b>Listado de Inventario</b></h4>
+            <table id="example1" class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Serial Contabilidad</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Serial</th>
+                        <th>Procesador</th>
+                        <th>Memoria RAM</th>
+                        <th>Capacidad Máx</th>
+                        <th>Tipo</th>
+                        <th>Velocidad</th>
+                        <th>Disco Duro</th>
+                        <th>Capacidad</th>
+                        <th>Versión Windows</th>
+                        <th>Clave Windows</th>
+                        <th>Versión Office</th>
+                        <th>Clave Office</th>
+                        <th>IP</th>
+                        <th>Any Desk</th>
+                        <th>Clave Admin</th>
+                        <th>Funcionario a Cargo</th>
+                        <th>Observaciones</th>
+                        <th>Funcionario Registra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for equipo in equipos %}
+                    <tr>
+                        <td>{{ equipo.serial_contabilidad }}</td>
+                        <td>{{ equipo.marca }}</td>
+                        <td>{{ equipo.modelo }}</td>
+                        <td>{{ equipo.serial }}</td>
+                        <td>{{ equipo.procesador }}</td>
+                        <td>{{ equipo.memoria_ram }}</td>
+                        <td>{{ equipo.capacidad_max }}</td>
+                        <td>{{ equipo.tipo }}</td>
+                        <td>{{ equipo.velocidad }}</td>
+                        <td>{{ equipo.disco_duro }}</td>
+                        <td>{{ equipo.capacidad }}</td>
+                        <td>{{ equipo.version_windows }}</td>
+                        <td>{{ equipo.clave_windows }}</td>
+                        <td>{{ equipo.version_office }}</td>
+                        <td>{{ equipo.clave_office }}</td>
+                        <td>{{ equipo.ip }}</td>
+                        <td>{{ equipo.any_desk }}</td>
+                        <td>{{ equipo.clave_admin }}</td>
+                        <td>{{ equipo.funcionario_a_cargo }}</td>
+                        <td>{{ equipo.observaciones }}</td>
+                        <td>{{ equipo.funcionario_registra }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
