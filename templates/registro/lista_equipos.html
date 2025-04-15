@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block sinNada %}
-<div class="container-fluid" style="padding-top: 35px;padding-left: 50px;padding-right: 50px;">
+<div class="container-fluid" style="padding-top: 10px;padding-left: 50px;padding-right: 50px;">
     <div class="card shadow table-responsive">
         <div class="card-body table-responsive">
             {% include 'messages.html' %}
@@ -10,6 +10,7 @@
             <table id="example1" class="table table-bordered table-hover">
                 <thead class="table-secondary">
                     <tr>
+                        <th>Id</th>
                         <th>Serial Contabilidad</th>
                         <th>Marca</th>
                         <th>Modelo</th>
@@ -38,6 +39,7 @@
                 <tbody>
                 {% for equipo in equipos %}
                     <tr>
+                        <td>{{ equipo.id }}</td>
                         <td>{{ equipo.serial_contabilidad }}</td>
                         <td>{{ equipo.marca }}</td>
                         <td>{{ equipo.modelo }}</td>

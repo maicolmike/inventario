@@ -5,7 +5,7 @@
 
 {% if user.is_authenticated %}  <!-- Inicio autenticado -->
 
-<a class="navbar-brand"><img src="{% static 'img/logoCootep.png' %}" width="250" height="" alt="COOTEP LTDA" title="COOTEP LTDA"></a>
+<a class="navbar-brand"><img src="{% static 'img/logoCootep.png' %}" width="200" height="" alt="COOTEP LTDA" title="COOTEP LTDA"></a>
 <nav class="navbar navbar-expand-sm navbar-dark bg-success" style="height: 50px;">
 
     <div class="container-fluid">
@@ -20,6 +20,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'lista_equipos' %}">Consultar equipos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'exportar_equipos_excel' %}">Archivo plano</a>
             </li>
             {% if user.is_superuser == 1 %}
             <li class="nav-item">
