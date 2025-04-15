@@ -61,7 +61,11 @@
                         <td>{{ equipo.any_desk }}</td>
                         <td>{{ equipo.clave_admin }}</td>
                         <td>{{ equipo.funcionario_a_cargo }}</td>
-                        <td>{{ equipo.observaciones }}</td>
+                        <td>{{ equipo.observaciones |truncatechars:50 }} <!-- Muestra solo los primeros 50 caracteres -->
+                            {% if equipo.observaciones|length > 50 %} 
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalVerMas{{ equipo.id }}">Ver más</a>
+                            {% endif %}
+                        </td>
                         <td>{{ equipo.funcionario_registra }}</td>
                         <td style="text-align: center;">
                             <a href="{% url 'editar_equipo' equipo.id %}" class="btn btn-success btn-sm">
@@ -75,6 +79,7 @@
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
+                        {% include 'registro/modalVerMas.html' %}
                     </tr>
                 {% endfor %}
                 </tbody>
