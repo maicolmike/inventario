@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-j*k920r6yy9b-@2=mzjo4qw=3lz2n+@)k_2+gz=ovz*htk(1dz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -93,8 +93,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mantenimientos',
-        'USER': 'sistemas11',
-        'PASSWORD': 'Cootep2025$',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 #LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'es-co'  # Cambiado a Español - Colombia
+LANGUAGE_CODE = 'es-co'  # Cambiado a Espa�ol - Colombia
 
 #TIME_ZONE = 'UTC'
 TIME_ZONE = 'America/Bogota'  # Cambiado a la zona horaria de Colombia
@@ -150,23 +150,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # configurando el servicio de correo
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-DEFAULT_FROM_EMAIL = 'soportesistemas@cootep.com.co'
-# Configurar la duración de la sesión en segundos (10 minutos) se multiplica 60 segundos por los minutos
+#EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+# Configurar la duraci�n de la sesi�n en segundos (10 minutos) se multiplica 60 segundos por los minutos
 SESSION_COOKIE_AGE = 600
-SESSION_COOKIE_SECURE = False  # True si estï¿½s usando HTTPS
+SESSION_COOKIE_SECURE = False  # True si est�s usando HTTPS
 SESSION_COOKIE_HTTPONLY = 600
 
-# Configurar para que la sesión se actualice con cada solicitud
+# Configurar para que la sesi�n se actualice con cada solicitud
 SESSION_SAVE_EVERY_REQUEST = True
 
-# URL de inicio de sesión personalizada  / evitar el error de http://127.0.0.1:8000/accounts/login/?next=/requerimientos/listar_requerimientos/
+# URL de inicio de sesi�n personalizada  / evitar el error de http://127.0.0.1:8000/accounts/login/?next=/requerimientos/listar_requerimientos/
 LOGIN_URL = '/users/login'
 
 #no me esta funcionando esto
-# Si deseas redirigir a los usuarios después de iniciar sesión:
+# Si deseas redirigir a los usuarios despu�s de iniciar sesi�n:
 #LOGIN_REDIRECT_URL = '/requerimientos/listar_requerimientos/'
