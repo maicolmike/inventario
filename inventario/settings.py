@@ -155,6 +155,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 #EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 #EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+m
 
 # Configurar la duración de la sesión en segundos (10 minutos) se multiplica 60 segundos por los minutos
 SESSION_COOKIE_AGE = 600
