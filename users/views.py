@@ -39,7 +39,7 @@ def login_view(request):
         return redirect('index')
 
     return render(request, 'users/login.html', {
-        'title': "Login",
+        'title': "Login inventario",
         'form': form
     })
 
@@ -70,7 +70,7 @@ def register(request):
     
     return render(request, 'users/register.html', {
         'form': form,
-        'title': "Registro",
+        'title': "Registro de usuarios",
         })
 
 #Listar usuarios
@@ -79,7 +79,7 @@ def usersList(request):
     #return HttpResponse('Hola mundo')
     lista_usuarios = User.objects.all()
     return render(request, 'users/listUsers.html',{ 
-        'title': "Listado Usuarios",
+        'title': "Listado de usuarios",
         'lista_usuarios': lista_usuarios,
     })
 

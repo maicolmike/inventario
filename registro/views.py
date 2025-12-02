@@ -19,12 +19,18 @@ def registrar_equipo(request):
             return redirect('lista_equipos')
     else:
         form = EquipoForm()
-    return render(request, 'registro/registrar_equipo.html', {'form': form})
+    return render(request, 'registro/registrar_equipo.html', {
+        'title': "Registrar equipo",
+        'form': form
+        })
 
 @login_required
 def lista_equipos(request):
     equipos = Equipo.objects.all()
-    return render(request, 'registro/lista_equipos.html', {'equipos': equipos})
+    return render(request, 'registro/lista_equipos.html', {
+        'title': "Consultar equipos",
+        'equipos': equipos
+        })
 
 @login_required
 def editar_equipo(request, pk):
@@ -37,7 +43,10 @@ def editar_equipo(request, pk):
             return redirect('lista_equipos')
     else:
         form = EquipoForm(instance=equipo)
-    return render(request, 'registro/registrar_equipo.html', {'form': form})
+    return render(request, 'registro/registrar_equipo.html', {
+        'title': "Editar equipo",
+        'form': form
+        })
 
 @login_required
 def eliminar_equipo(request, pk):
