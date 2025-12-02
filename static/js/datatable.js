@@ -5,7 +5,7 @@ $(function () {
     "lengthChange": false, // Deshabilita la opción para cambiar el número de registros por página
     "autoWidth": true, // Deshabilita el ajuste automático del ancho de las columnas
     "lengthMenu": [10, 25, 100], // Define las opciones del menú desplegable para el número de registros por página
-    "pageLength": 10, // Establece el número de registros por página a 5
+    "pageLength": 8, // Establece el número de registros por página a 5
 
     // Configura la traducción de los textos del DataTable al español
     "language": {
@@ -31,6 +31,15 @@ $(function () {
         "sSortAscending": ": Activar para ordenar la columna de manera ascendente", // Texto para accesibilidad (orden ascendente)
         "sSortDescending": ": Activar para ordenar la columna de manera descendente" // Texto para accesibilidad (orden descendente)
       }
-    }
+    },
+    // 🔹 Personaliza la estructura del DOM (dónde se colocan los elementos de búsqueda, tabla y paginación)
+    // En este caso:
+    //   f → filtro de búsqueda arriba
+    //   r → información del procesado
+    //   t → tabla
+    //   i → información de los registros
+    //   p → paginación
+    // Con estilos Bootstrap: búsqueda alineada arriba a la derecha con margen inferior
+    dom: '<"d-flex justify-content-between align-items-center mb-3"f>rtip'
   });
 });

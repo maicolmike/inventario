@@ -2,20 +2,16 @@
 {% load static %}
 
 {% block sinNada %}
-
+<br>
+<br>
 <div class="container-fluid">
     <br>
-    <br>
-    <br>
-    {% include 'messages.html' %}
-
-    <h3 class="text-center"><b>Listado de equipos</b></h3>
-    <!-- Contenedor responsivo para tabla -->
-    <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-hover align-middle">
-            <thead class="table-secondary text-center">
-                <tr>
-                    <th>Id</th>
+            {% include 'messages.html' %}
+            <h4 style="text-align: center;"><b>Listado de equipos</b></h4>
+            <table id="example1" class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Id</th>
                         <th>Serial Contabilidad</th>
                         <th>Marca</th>
                         <th>Modelo</th>
@@ -39,12 +35,12 @@
                         <th>Funcionario Registra</th>
                         <th>Editar</th>
                         <th>Borrar</th>
-                </tr>
-            </thead>
-            <tbody>
+                    </tr>
+                </thead>
+                <tbody>
                 {% for equipo in equipos %}
-                <tr>
-                    <td>{{ equipo.id }}</td>
+                    <tr>
+                        <td>{{ equipo.id }}</td>
                         <td>{{ equipo.serial_contabilidad }}</td>
                         <td>{{ equipo.marca }}</td>
                         <td>{{ equipo.modelo }}</td>
@@ -83,11 +79,10 @@
                             </a>
                         </td>
                         {% include 'registro/modalVerMas.html' %}
-                </tr>
+                    </tr>
                 {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <!-- FIN tabla responsiva -->
+                </tbody>
+            </table>
 </div>
 {% endblock %}
+
