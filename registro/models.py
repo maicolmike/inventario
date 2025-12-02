@@ -1,28 +1,22 @@
 from django.db import models
 
 class Equipo(models.Model):
-    serial_contabilidad = models.CharField(max_length=50,blank=True, null=True)
-    marca = models.CharField(max_length=50)
-    modelo = models.CharField(max_length=50)
-    serial = models.CharField(max_length=50, unique=True)
-    procesador = models.CharField(max_length=100)
-    memoria_ram = models.CharField(max_length=50)
-    capacidad_max = models.CharField(max_length=50)
-    tipo = models.CharField(max_length=50,blank=True, null=True)
-    velocidad = models.CharField(max_length=50,blank=True, null=True)
-    disco_duro = models.CharField(max_length=50)
-    capacidad = models.CharField(max_length=50)
-    version_windows = models.CharField(max_length=50)
-    clave_windows = models.CharField(max_length=50,blank=True, null=True)
-    version_office = models.CharField(max_length=50)
-    clave_office = models.CharField(max_length=50,blank=True, null=True)
-    ip = models.GenericIPAddressField(blank=True, null=True)
-    any_desk = models.CharField(max_length=50, blank=True, null=True)
-    clave_admin = models.CharField(max_length=50,blank=True, null=True)
-    funcionario_a_cargo = models.CharField(max_length=100,blank=True, null=True)
+    codigo = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=255)
+    serial = models.CharField(max_length=100, unique=True)
+    marca = models.CharField(max_length=150)
+    modelo = models.CharField(max_length=150)
+    color = models.CharField(max_length=50)
+    sucursal = models.CharField(max_length=50)
+    clasificacion = models.CharField(max_length=100)
+    valor = models.DecimalField(max_digits=12, decimal_places=2)
+    fecha_compra = models.DateField()
+    recursos = models.CharField(max_length=100)
+    estado = models.CharField(max_length=50)
+    cargo_funcionario = models.CharField(max_length=100)
+    funcionario_responsable = models.CharField(max_length=100)
+    proveedor = models.CharField(max_length=255)
     observaciones = models.TextField(blank=True, null=True)
-    funcionario_registra = models.CharField(max_length=100,blank=True, null=True)
 
     def __str__(self):
-        return f"{self.marca} {self.modelo} ({self.serial})"
-
+        return f"{self.descripcion} - {self.serial}"

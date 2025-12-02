@@ -3,151 +3,130 @@
 
 {% block content %}
 
-<!-- Enlace al archivo de estilos CSS específico para el formulario -->
 <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
 <div class="container-fluid" style="padding-top: 35px;padding-left: 50px;padding-right: 50px;">
-    <!-- Incluir mensajes de error o éxito generados por el sistema -->
+    
     {% include 'messages.html' %}
 
     <div class="container">
-      <h2 class="my-3">Registrar Equipo</h2>
-      <form method="post">
-          {% csrf_token %}
-          <div class="row">
-              <div class="col-md-3">
-                  <label for="{{ form.serial_contabilidad.id_for_label }}">Serial Contabilidad</label>
-                  {{ form.serial_contabilidad }}
-              </div>
+        <h2 class="my-3">Registrar Elemento de Inventario</h2>
 
-              <div class="col-md-3">
-                  <label for="{{ form.marca.id_for_label }}">Marca equipo</label>
-                  {{ form.marca }}
-              </div>
+        <form method="post">
+            {% csrf_token %}
 
-              <div class="col-md-3">
-                <label for="{{ form.modelo.id_for_label }}">Modelo</label>
-                {{ form.modelo }}
-              </div>
+            <!-- FILA 1 -->
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="{{ form.codigo.id_for_label }}">Código</label>
+                    {{ form.codigo }}
+                </div>
 
-              <div class="col-md-3">
-                <label for="{{ form.serial.id_for_label }}">Serial equipo</label>
-                {{ form.serial }}
-              </div>
-          </div>
-  
-          <div class="row mt-3">
-            <div class="col-md-3">
-              <label for="{{ form.procesador.id_for_label }}">Procesador</label>
-              {{ form.procesador }}
+                <div class="col-md-9">
+                    <label for="{{ form.descripcion.id_for_label }}">Descripción</label>
+                    {{ form.descripcion }}
+                </div>
             </div>
 
-              <div class="col-md-2">
-                  <label for="{{ form.memoria_ram.id_for_label }}">Tamaño memoria RAM</label>
-                  {{ form.memoria_ram }}
-              </div>
+            <!-- FILA 2 -->
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label for="{{ form.serial.id_for_label }}">Serial</label>
+                    {{ form.serial }}
+                </div>
 
-              <div class="col-md-2">
-                <label for="{{ form.capacidad_max.id_for_label }}">Capacidad Máxima</label>
-                {{ form.capacidad_max }}
-              </div>
+                <div class="col-md-3">
+                    <label for="{{ form.marca.id_for_label }}">Marca</label>
+                    {{ form.marca }}
+                </div>
 
-              <div class="col-md-2">
-                <label for="{{ form.tipo.id_for_label }}">Tipo</label>
-                {{ form.tipo }}
-              </div>
+                <div class="col-md-3">
+                    <label for="{{ form.modelo.id_for_label }}">Modelo</label>
+                    {{ form.modelo }}
+                </div>
 
-              <div class="col-md-3">
-                <label for="{{ form.capacidad_max.id_for_label }}">Velocidad memoria ram</label>
-                {{ form.velocidad }}
-              </div>
-
-          </div>
-  
-          <div class="row mt-3">
-              <div class="col-md-3">
-                  <label for="{{ form.capacidad_max.id_for_label }}">Tpo de disco duro</label>
-                  {{ form.disco_duro }}
-              </div>
-
-              <div class="col-md-3">
-                <label for="{{ form.capacidad_max.id_for_label }}">Capacidad</label>
-                {{ form.capacidad }}
-              </div>
-
-              <div class="col-md-3">
-                <label for="{{ form.capacidad_max.id_for_label }}">Version de windows</label>
-                {{ form.version_windows }}
-              </div>
-
-              <div class="col-md-3">
-                <label for="{{ form.capacidad_max.id_for_label }}">Clave de windows</label>
-                {{ form.clave_windows }}
-              </div>
-              
-          </div>
-
-          <div class="row mt-3">
-            <div class="col-md-4">
-                <label for="{{ form.capacidad_max.id_for_label }}">Version de office</label>
-                {{ form.version_office }}
+                <div class="col-md-3">
+                    <label for="{{ form.color.id_for_label }}">Color</label>
+                    {{ form.color }}
+                </div>
             </div>
 
-            <div class="col-md-4">
-              <label for="{{ form.capacidad_max.id_for_label }}">Clave de office</label>
-              {{ form.clave_office }}
+            <!-- FILA 3 -->
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label for="{{ form.sucursal.id_for_label }}">Sucursal</label>
+                    {{ form.sucursal }}
+                </div>
+
+                <div class="col-md-4">
+                    <label for="{{ form.clasificacion.id_for_label }}">Clasificación</label>
+                    {{ form.clasificacion }}
+                </div>
+
+                <div class="col-md-5">
+                    <label for="{{ form.valor.id_for_label }}">Valor</label>
+                    {{ form.valor }}
+                </div>
             </div>
 
-            <div class="col-md-4">
-              <label for="{{ form.capacidad_max.id_for_label }}">Ip del equipo</label>
-              {{ form.ip }}
+            <!-- FILA 4 -->
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label for="{{ form.fecha_compra.id_for_label }}">Fecha de Compra</label>
+                    {{ form.fecha_compra }}
+                </div>
+
+                <div class="col-md-4">
+                    <label for="{{ form.recursos.id_for_label }}">Recursos</label>
+                    {{ form.recursos }}
+                </div>
+
+                <div class="col-md-4">
+                    <label for="{{ form.estado.id_for_label }}">Estado</label>
+                    {{ form.estado }}
+                </div>
             </div>
 
-          </div>
+            <!-- FILA 5 -->
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="{{ form.cargo_funcionario.id_for_label }}">Cargo del Funcionario Responsable</label>
+                    {{ form.cargo_funcionario }}
+                </div>
 
-          <div class="row mt-3">
-            <div class="col-md-4">
-                <label for="{{ form.capacidad_max.id_for_label }}"> Numero de any desk</label>
-                {{ form.any_desk }}
+                <div class="col-md-6">
+                    <label for="{{ form.funcionario_responsable.id_for_label }}">Nombre del Funcionario Responsable</label>
+                    {{ form.funcionario_responsable }}
+                </div>
             </div>
 
-            <div class="col-md-4">
-              <label for="{{ form.capacidad_max.id_for_label }}">clave administrador any desk</label>
-              {{ form.clave_admin }}
+            <!-- FILA 6 -->
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <label for="{{ form.proveedor.id_for_label }}">Proveedor</label>
+                    {{ form.proveedor }}
+                </div>
             </div>
 
-            <div class="col-md-4">
-              <label for="{{ form.capacidad_max.id_for_label }}">Funcionario a cargo del equipo</label>
-              {{ form.funcionario_a_cargo }}
+            <!-- FILA 7 -->
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <label for="{{ form.observaciones.id_for_label }}">Observaciones</label>
+                    {{ form.observaciones }}
+                </div>
             </div>
-            
-          </div>
-  
-          <div class="row mt-3">
-              <div class="col-md-12">
-                  <label for="{{ form.observaciones.id_for_label }}">Observaciones</label>
-                  {{ form.observaciones }}
-              </div>
-          </div>
 
-          <div class="row mt-3" style="display: none;">
-            <div class="col-md-12">
-                <label for="{{ form.funcionario_registra.id_for_label }}">Funcionario Registra</label>
-                {{ form.funcionario_registra }}
+            <!-- BOTON GUARDAR -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        Guardar
+                    </button>
+                </div>
             </div>
-          </div>
-        
-  
-          <div class="row mt-4">
-              <div class="col-md-12 text-center">
-                  <button type="submit" class="btn btn-success">Guardar</button>
-              </div>
-          </div>
-      </form>
-  </div>
-  
-    
+
+        </form>
+    </div>
 </div>
-
 
 {% endblock %}
