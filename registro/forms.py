@@ -6,7 +6,7 @@ from .models import Equipo
 # -------------------------
 
 CODIGO = [
-    ('', ''),
+    ('', 'Seleccionar'),
     ('AG01-FDO', 'AG01-FDO'),
     ('AG02-FDO', 'AG02-FDO'),
     ('AG03-FDO', 'AG03-FDO'),
