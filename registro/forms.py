@@ -26,20 +26,19 @@ CODIGO = [
 ]
 
 SUCURSAL = [
-    ('', ''),
-    ('SIBUNDOY', 'Sibundoy'),
-    ('MOCOA', 'Mocoa'),
-    ('VILLAGARZON', 'Villagarzon'),
-    ('PUERTO ASIS', 'Puerto Asis'),
-    ('PUERTO LEGUIZAMO', 'Puerto Leguizamo'),
-    ('ORITO', 'Orito'),
-    ('HORMIGA', 'Hormiga'),
-    ('DORADA', 'Dorada'),
-    
+    ('', 'Seleccionar'),
+    ('Mocoa', 'Mocoa'),
+    ('Villagarzon', 'Villagarzon'),
+    ('Puerto Asis', 'Puerto Asis'),
+    ('Puerto Leguizamo', 'Puerto Leguizamo'),
+    ('Orito', 'Orito'),
+    ('Hormiga', 'Hormiga'),
+    ('Dorada', 'Dorada'),
+    ('Sibundoy', 'Sibundoy'),
 ]
 
 CLASIFICACION = [
-    ('', ''),
+    ('', 'Seleccionar'),
     ('Equipo de cómputo', 'Equipo de cómputo'),
     ('Equipo de comunicación y audiovisual', 'Equipo de comunicación y audiovisual'),
     ('Electrodomésticos', 'Electrodomésticos'),
@@ -50,26 +49,32 @@ CLASIFICACION = [
 ]
 
 RECURSOS = [
-    ('', ''),
-    ('GASTO', 'GASTO'),
-    ('FONDO DE EDUCACION', 'FONDO DE EDUCACION'),
-    ('FONDO DE SOLIDARIDAD', 'FONDO DE SOLIDARIDAD'),
-    ('OTRO', 'OTRO'),
+    ('', 'Seleccionar'),
+    ('Gasto', 'Gasto'),
+    ('Fondo de Educación', 'Fondo de Educación'),
+    ('Fondo de Solidaridad', 'Fondo de Solidaridad'),
+    ('Otro', 'Otro'),
 ]
 
 ESTADO = [
-    ('', ''),
-    ('NUEVO', 'NUEVO'),
-    ('BUENO', 'BUENO'),
-    ('REGULAR', 'REGULAR'),
-    ('MALO', 'MALO'),
-    ('OBSOLETO', 'OBSOLETO'),
+    ('', 'Seleccionar'),
+    ('Nuevo', 'Nuevo'),
+    ('Bueno', 'Bueno'),
+    ('Regular', 'Regular'),
+    ('Malo', 'Malo'),
+    ('Obsoleto', 'Obsoleto'),
 ]
 
+# -------------------------
+# FORMULARIO
+# -------------------------
+
 class EquipoForm(forms.ModelForm):
+
     class Meta:
         model = Equipo
         fields = "__all__"
+
         widgets = {
             'codigo': forms.Select(attrs={'class': 'form-control'}, choices=CODIGO),
             'descripcion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Descripción del elemento'}),
@@ -77,14 +82,42 @@ class EquipoForm(forms.ModelForm):
             'marca': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Marca'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Modelo'}),
             'color': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Color'}),
+
             'sucursal': forms.Select(attrs={'class': 'form-control'}, choices=SUCURSAL),
             'clasificacion': forms.Select(attrs={'class': 'form-control'}, choices=CLASIFICACION),
+
             'valor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Valor'}),
             'fecha_compra': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+
             'recursos': forms.Select(attrs={'class': 'form-control'}, choices=RECURSOS),
             'estado': forms.Select(attrs={'class': 'form-control'}, choices=ESTADO),
+
             'cargo_funcionario': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cargo del funcionario'}),
             'funcionario_responsable': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre del funcionario'}),
             'proveedor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Proveedor'}),
+
             'observaciones': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
+
+    # -------------------------
+    # NORMALIZACIÓN (opcional pero recomendado)
+    # upper = mayusculas
+    # lower = minusculas
+    # capitalize = primera mayuscula
+    # -------------------------
+
+    def clean_marca(self):
+        marca = self.cleaned_data["marca"]
+        return marca.upper().strip()  # ejemplo: HP, LENOVO
+
+    def clean_modelo(self):
+        modelo = self.cleaned_data["modelo"]
+        return modelo.upper().strip()
+
+    def clean_color(self):
+        color = self.cleaned_data["color"]
+        return color.capitalize().strip()
+
+    def clean_funcionario_responsable(self):
+        nombre = self.cleaned_data["funcionario_responsable"]
+        return " ".join([p.capitalize() for p in nombre.lower().split()])
