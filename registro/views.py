@@ -62,31 +62,39 @@ def exportar_equipos_excel(request):
 
     # Cabeceras
     columnas = [
-        'Id', 'Serial Contabilidad', 'Marca', 'Modelo', 'Serial', 'Procesador',
-        'Memoria RAM', 'Capacidad Max', 'Tipo', 'Velocidad', 'Disco Duro',
-        'Capacidad', 'Versión Windows', 'Clave Windows', 'Versión Office',
-        'Clave Office', 'IP', 'AnyDesk', 'Clave Admin', 'Funcionario a Cargo',
-        'Observaciones', 'Funcionario Registra'
+        'ID', 'Código', 'Descripción', 'Serial', 'Marca', 'Modelo', 'Color',
+        'Sucursal', 'Clasificación', 'Valor', 'Fecha Compra', 'Recursos',
+        'Estado', 'Cargo Funcionario', 'Funcionario Responsable',
+        'Proveedor', 'Observaciones'
     ]
     ws.append(columnas)
 
     # Datos
     for equipo in Equipo.objects.all():
         fila = [
-            equipo.id, equipo.serial_contabilidad,equipo.marca, equipo.modelo, equipo.serial,
-            equipo.procesador, equipo.memoria_ram, equipo.capacidad_max, equipo.tipo,
-            equipo.velocidad, equipo.disco_duro, equipo.capacidad, equipo.version_windows,
-            equipo.clave_windows, equipo.version_office, equipo.clave_office, equipo.ip,
-            equipo.any_desk, equipo.clave_admin, equipo.funcionario_a_cargo,
-            equipo.observaciones, equipo.funcionario_registra
+            equipo.id,
+            equipo.codigo,
+            equipo.descripcion,
+            equipo.serial,
+            equipo.marca,
+            equipo.modelo,
+            equipo.color,
+            equipo.sucursal,
+            equipo.clasificacion,
+            float(equipo.valor),
+            equipo.fecha_compra.strftime('%d/%m/%Y') if equipo.fecha_compra else "",
+            equipo.recursos,
+            equipo.estado,
+            equipo.cargo_funcionario,
+            equipo.funcionario_responsable,
+            equipo.proveedor,
+            equipo.observaciones or ""
         ]
         ws.append(fila)
 
-    # Nombre del archivo con fecha
     fecha = datetime.now().strftime('%Y-%m-%d')
     filename = f'equipos_{fecha}.xlsx'
 
-    # Configurar la respuesta HTTP
     response = HttpResponse(
         content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     )
