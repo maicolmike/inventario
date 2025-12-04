@@ -206,7 +206,7 @@ class EquipoForm(forms.ModelForm):
             'clasificacion': forms.Select(attrs={'class': 'form-control'}, choices=CLASIFICACION),
 
             'valor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Valor'}),
-            'fecha_compra': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'fecha_compra': forms.DateInput(format='%Y-%m-%d',attrs={'class': 'form-control', 'type': 'date'}),
 
             'recursos': forms.Select(attrs={'class': 'form-control'}, choices=RECURSOS),
             'estado': forms.Select(attrs={'class': 'form-control'}, choices=ESTADO),
@@ -240,3 +240,8 @@ class EquipoForm(forms.ModelForm):
     def clean_funcionario_responsable(self):
         nombre = self.cleaned_data["funcionario_responsable"]
         return " ".join([p.capitalize() for p in nombre.lower().split()])
+
+    # Muy importante: definir los formatos aceptados
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['fecha_compra'].input_formats = ['%Y-%m-%d']
