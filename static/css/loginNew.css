@@ -2,7 +2,7 @@
 body {
     height: 100vh; /* Ocupa toda la altura de la pantalla */
     font-family: 'Poppins', sans-serif; /* Fuente */
-    background-image: url('../img/fondo.jpg'); /* Subir un nivel y entrar a img /* Imagen de fondo */
+    background-image: url('../img/fondoInventario2.jpg'); /* Subir un nivel y entrar a img /* Imagen de fondo */
     background-size: cover; /* Ajusta el tamaño */
     background-size: cover; /* Ajusta el tamaño */
     background-position: center;
