@@ -32,7 +32,9 @@
                     <th>Proveedor</th>
                     <th>Observaciones</th>
                     <th>Editar</th>
+                    {% if user.is_superuser == 1 %}
                     <th>Borrar</th>
+                    {% endif %}
                 </tr>
             </thead>
 
@@ -71,6 +73,7 @@
                         </a>
                     </td>
 
+                    {% if user.is_superuser == 1 %}
                     <!-- Botón Eliminar -->
                     <td class="text-center">
                         <a href="{% url 'eliminar_equipo' equipo.id %}" class="btn btn-danger btn-sm"
@@ -78,6 +81,7 @@
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>
+                    {% endif %}
 
                     {% include 'registro/modalVerMas.html' %}
                 </tr>
