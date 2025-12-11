@@ -60,8 +60,8 @@
 
                     <!-- Observaciones con truncado -->
                     <td>
-                        {{ equipo.observaciones|truncatechars:210 }}
-                        {% if equipo.observaciones and equipo.observaciones|length > 210 %}
+                        {{ equipo.observaciones|truncatechars:50 }}
+                        {% if equipo.observaciones and equipo.observaciones|length > 50 %}
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalVerMas{{ equipo.id }}">Ver más</a>
                         {% endif %}
                     </td>
