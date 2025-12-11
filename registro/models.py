@@ -9,7 +9,7 @@ class Equipo(models.Model):
     color = models.CharField(max_length=50)
     sucursal = models.CharField(max_length=50)
     clasificacion = models.CharField(max_length=100)
-    valor = models.DecimalField(max_digits=12, decimal_places=2)
+    valor = models.BigIntegerField()
     fecha_compra = models.DateField()
     recursos = models.CharField(max_length=100)
     estado = models.CharField(max_length=50)
