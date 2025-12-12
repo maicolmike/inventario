@@ -201,6 +201,7 @@ class EquipoForm(forms.ModelForm):
             'marca': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Marca'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Modelo'}),
             'color': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Color'}),
+            'cantidad': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Cantidad'}),
 
             'sucursal': forms.Select(attrs={'class': 'form-control'}, choices=SUCURSAL),
             'clasificacion': forms.Select(attrs={'class': 'form-control'}, choices=CLASIFICACION),
@@ -213,6 +214,7 @@ class EquipoForm(forms.ModelForm):
 
             'cargo_funcionario': forms.Select(attrs={'class': 'form-control'}, choices=CARGO_FUNCIONARIO),
             'funcionario_responsable': forms.Select(attrs={'class': 'form-control'}, choices=FUNCIONARIO_RESPONSABLE),
+            'nit': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nit'}),
             'proveedor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Proveedor'}),
 
             'observaciones': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
