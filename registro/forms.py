@@ -205,7 +205,7 @@ class EquipoForm(forms.ModelForm):
             'sucursal': forms.Select(attrs={'class': 'form-control'}, choices=SUCURSAL),
             'clasificacion': forms.Select(attrs={'class': 'form-control'}, choices=CLASIFICACION),
 
-            'valor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Valor','onkeypress': 'return event.charCode >= 48 && event.charCode <= 57','inputmode': 'numeric','pattern': '[0-9]*',}),
+            'valor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Valor','inputmode': 'numeric','autocomplete': 'off'}),
             'fecha_compra': forms.DateInput(format='%Y-%m-%d',attrs={'class': 'form-control', 'type': 'date'}),
 
             'recursos': forms.Select(attrs={'class': 'form-control'}, choices=RECURSOS),
@@ -242,15 +242,28 @@ class EquipoForm(forms.ModelForm):
         return " ".join([p.capitalize() for p in nombre.lower().split()])
 
     def clean_valor(self):
-        valor = self.cleaned_data.get("valor")
+        # Obtiene el valor tal como viene del formulario (con puntos)
+        valor_raw = self.data.get("valor", "").replace(".", "")
 
-        if valor is None:
+        # Si el usuario deja el campo vacío → error obligatorio
+        if valor_raw == "":
             raise forms.ValidationError("El valor es obligatorio.")
 
+        try:
+            # Convierte el valor ya limpio a entero
+            valor = int(valor_raw)
+        except:
+            # Si contiene caracteres no numéricos → error
+            raise forms.ValidationError("Ingrese solo números enteros.")
+
+        # Valida que no ingresen números negativos
         if valor < 0:
             raise forms.ValidationError("El valor no puede ser negativo.")
 
+        # Retorna el valor entero (este se guardará en la BD)
         return valor
+
+
 
 
     # Muy importante: definir los formatos aceptados
