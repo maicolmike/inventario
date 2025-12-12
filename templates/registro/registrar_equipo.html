@@ -13,6 +13,20 @@
         <h2 class="my-3">Registrar Elemento de Inventario</h2>
 
         <form method="post">
+            <!-- validar errores -->
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>Corrige los siguientes errores:</strong>
+                    <ul>
+                        {% for field in form %}
+                            {% if field.errors %}
+                                <li><b>{{ field.label }}:</b> {{ field.errors|striptags }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
             {% csrf_token %}
 
             <!-- FILA 1 -->

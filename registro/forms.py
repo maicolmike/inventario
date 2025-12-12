@@ -205,7 +205,7 @@ class EquipoForm(forms.ModelForm):
             'sucursal': forms.Select(attrs={'class': 'form-control'}, choices=SUCURSAL),
             'clasificacion': forms.Select(attrs={'class': 'form-control'}, choices=CLASIFICACION),
 
-            'valor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Valor'}),
+            'valor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Valor','onkeypress': 'return event.charCode >= 48 && event.charCode <= 57','inputmode': 'numeric','pattern': '[0-9]*',}),
             'fecha_compra': forms.DateInput(format='%Y-%m-%d',attrs={'class': 'form-control', 'type': 'date'}),
 
             'recursos': forms.Select(attrs={'class': 'form-control'}, choices=RECURSOS),
@@ -240,6 +240,18 @@ class EquipoForm(forms.ModelForm):
     def clean_funcionario_responsable(self):
         nombre = self.cleaned_data["funcionario_responsable"]
         return " ".join([p.capitalize() for p in nombre.lower().split()])
+
+    def clean_valor(self):
+        valor = self.cleaned_data.get("valor")
+
+        if valor is None:
+            raise forms.ValidationError("El valor es obligatorio.")
+
+        if valor < 0:
+            raise forms.ValidationError("El valor no puede ser negativo.")
+
+        return valor
+
 
     # Muy importante: definir los formatos aceptados
     def __init__(self, *args, **kwargs):
