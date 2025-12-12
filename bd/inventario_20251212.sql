@@ -168,7 +168,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +177,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-12-02 22:21:10.921410'),(2,'contenttypes','0002_remove_content_type_name','2025-12-02 22:21:11.023305'),(3,'auth','0001_initial','2025-12-02 22:21:11.266017'),(4,'auth','0002_alter_permission_name_max_length','2025-12-02 22:21:11.338483'),(5,'auth','0003_alter_user_email_max_length','2025-12-02 22:21:11.342740'),(6,'auth','0004_alter_user_username_opts','2025-12-02 22:21:11.347828'),(7,'auth','0005_alter_user_last_login_null','2025-12-02 22:21:11.357556'),(8,'auth','0006_require_contenttypes_0002','2025-12-02 22:21:11.360057'),(9,'auth','0007_alter_validators_add_error_messages','2025-12-02 22:21:11.364647'),(10,'auth','0008_alter_user_username_max_length','2025-12-02 22:21:11.376441'),(11,'auth','0009_alter_user_last_name_max_length','2025-12-02 22:21:11.384971'),(12,'auth','0010_alter_group_name_max_length','2025-12-02 22:21:11.452059'),(13,'auth','0011_update_proxy_permissions','2025-12-02 22:21:11.456568'),(14,'auth','0012_alter_user_first_name_max_length','2025-12-02 22:21:11.461054'),(15,'users','0001_initial','2025-12-02 22:21:11.752052'),(16,'admin','0001_initial','2025-12-02 22:21:11.871612'),(17,'admin','0002_logentry_remove_auto_add','2025-12-02 22:21:11.877855'),(18,'admin','0003_logentry_add_action_flag_choices','2025-12-02 22:21:11.884197'),(19,'registro','0001_initial','2025-12-02 22:21:11.912990'),(20,'sessions','0001_initial','2025-12-02 22:21:11.947772'),(21,'users','0002_alter_user_groups_alter_user_user_permissions','2025-12-02 22:21:11.959802'),(22,'registro','0002_alter_equipo_sucursal','2025-12-02 22:31:11.806207');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-12-12 19:22:50.172567'),(2,'contenttypes','0002_remove_content_type_name','2025-12-12 19:22:50.246418'),(3,'auth','0001_initial','2025-12-12 19:22:50.419459'),(4,'auth','0002_alter_permission_name_max_length','2025-12-12 19:22:50.482317'),(5,'auth','0003_alter_user_email_max_length','2025-12-12 19:22:50.492246'),(6,'auth','0004_alter_user_username_opts','2025-12-12 19:22:50.498974'),(7,'auth','0005_alter_user_last_login_null','2025-12-12 19:22:50.505495'),(8,'auth','0006_require_contenttypes_0002','2025-12-12 19:22:50.507464'),(9,'auth','0007_alter_validators_add_error_messages','2025-12-12 19:22:50.512400'),(10,'auth','0008_alter_user_username_max_length','2025-12-12 19:22:50.521889'),(11,'auth','0009_alter_user_last_name_max_length','2025-12-12 19:22:50.526771'),(12,'auth','0010_alter_group_name_max_length','2025-12-12 19:22:50.565765'),(13,'auth','0011_update_proxy_permissions','2025-12-12 19:22:50.574461'),(14,'auth','0012_alter_user_first_name_max_length','2025-12-12 19:22:50.582589'),(15,'users','0001_initial','2025-12-12 19:22:50.755353'),(16,'admin','0001_initial','2025-12-12 19:22:50.838806'),(17,'admin','0002_logentry_remove_auto_add','2025-12-12 19:22:50.844825'),(18,'admin','0003_logentry_add_action_flag_choices','2025-12-12 19:22:50.851898'),(19,'registro','0001_initial','2025-12-12 19:22:50.874507'),(20,'sessions','0001_initial','2025-12-12 19:22:50.902124');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,7 +203,6 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('ruoua2n9i3afjvexlu2vr7stoloiec4t','.eJxVjEEOwiAQRe_C2hCYwhRcuu8ZCAyjVA0kpV0Z765NutDtf-_9lwhxW0vYOi9hzuIstDj9binSg-sO8j3WW5PU6rrMSe6KPGiXU8v8vBzu30GJvXxrGpKPXudhBGUBIBtWV0IEpxJFAjc6h1kharaaSLNBa7R3ziSLYKx4fwDJazax:1vQYqx:WI4hGmmvuerVjg-5-PKNR7UNyTPYsLT0Je_2BX7pVYw','2025-12-02 22:38:11.853262');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,18 +221,21 @@ CREATE TABLE `registro_equipo` (
   `marca` varchar(150) NOT NULL,
   `modelo` varchar(150) NOT NULL,
   `color` varchar(50) NOT NULL,
+  `cantidad` int unsigned NOT NULL,
   `sucursal` varchar(50) NOT NULL,
   `clasificacion` varchar(100) NOT NULL,
-  `valor` decimal(12,2) NOT NULL,
+  `valor` bigint NOT NULL,
   `fecha_compra` date NOT NULL,
   `recursos` varchar(100) NOT NULL,
   `estado` varchar(50) NOT NULL,
   `cargo_funcionario` varchar(100) NOT NULL,
   `funcionario_responsable` varchar(100) NOT NULL,
+  `nit` varchar(20) NOT NULL,
   `proveedor` varchar(255) NOT NULL,
   `observaciones` longtext,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `serial` (`serial`)
+  UNIQUE KEY `serial` (`serial`),
+  CONSTRAINT `registro_equipo_chk_1` CHECK ((`cantidad` >= 0))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -266,6 +268,7 @@ CREATE TABLE `users_user` (
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL,
   `is_admin` tinyint(1) NOT NULL,
+  `agencia` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
@@ -277,7 +280,7 @@ CREATE TABLE `users_user` (
 
 LOCK TABLES `users_user` WRITE;
 /*!40000 ALTER TABLE `users_user` DISABLE KEYS */;
-INSERT INTO `users_user` VALUES (1,'pbkdf2_sha256$1000000$QMqmKmJsZm4kS6l8IPsw8Z$akyd3lgkGORMLWKva3Q1AfVvy6Ojs7UhdLPtz2OHwz0=','2025-12-02 22:24:42.788287',1,'admin11','','','soportesistemas@cootep.com.co',1,1,'2025-12-02 22:21:45.880085',0);
+INSERT INTO `users_user` VALUES (1,'pbkdf2_sha256$1000000$GUObS2JJESdKCKicI02dyF$c8y7JTbqKWQTBEHPx8DUAg+kBTXxj2DyYpUwdRul4CE=',NULL,1,'admin11','','','soportesistemas@cootep.com.co',1,1,'2025-12-12 19:26:38.788134',0,'');
 /*!40000 ALTER TABLE `users_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -346,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-02 17:31:57
+-- Dump completed on 2025-12-12 14:27:08

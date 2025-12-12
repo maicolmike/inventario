@@ -7,6 +7,7 @@ class Equipo(models.Model):
     marca = models.CharField(max_length=150)
     modelo = models.CharField(max_length=150)
     color = models.CharField(max_length=50)
+    cantidad = models.PositiveIntegerField(default=1) # Asume que por defecto es 1
     sucursal = models.CharField(max_length=50)
     clasificacion = models.CharField(max_length=100)
     valor = models.BigIntegerField()
@@ -15,6 +16,7 @@ class Equipo(models.Model):
     estado = models.CharField(max_length=50)
     cargo_funcionario = models.CharField(max_length=100)
     funcionario_responsable = models.CharField(max_length=100)
+    nit = models.CharField(max_length=20)
     proveedor = models.CharField(max_length=255)
     observaciones = models.TextField(blank=True, null=True)
 
