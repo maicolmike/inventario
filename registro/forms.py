@@ -242,29 +242,36 @@ class EquipoForm(forms.ModelForm):
         return " ".join([p.capitalize() for p in nombre.lower().split()])
 
     def clean_valor(self):
-        # Obtiene el valor tal como viene del formulario (con puntos)
-        valor_raw = self.data.get("valor", "").replace(".", "")
-
-        # Si el usuario deja el campo vacío → error obligatorio
-        if valor_raw == "":
+        # Obtenemos el valor crudo del formulario (string con posibles puntos)
+        valor_raw = self.data.get("valor", "").strip()
+        
+        # Quitamos los puntos de miles
+        valor_sin_puntos = valor_raw.replace(".", "")
+        
+        # Validamos que no esté vacío
+        if not valor_sin_puntos:
             raise forms.ValidationError("El valor es obligatorio.")
-
+        
+        # Validamos que solo contenga dígitos (más seguro que solo try/except)
+        if not valor_sin_puntos.isdigit():
+            raise forms.ValidationError("El valor debe contener solo números enteros.")
+        
+        # Convertimos a entero
         try:
-            # Convierte el valor ya limpio a entero
-            valor = int(valor_raw)
-        except:
-            # Si contiene caracteres no numéricos → error
-            raise forms.ValidationError("Ingrese solo números enteros.")
-
-        # Valida que no ingresen números negativos
+            valor = int(valor_sin_puntos)
+        except ValueError:
+            # Este except ya no debería ejecutarse nunca gracias a isdigit(), pero por seguridad
+            raise forms.ValidationError("El valor ingresado no es válido.")
+        
+        # Validación de negocio: no negativo
         if valor < 0:
             raise forms.ValidationError("El valor no puede ser negativo.")
-
-        # Retorna el valor entero (este se guardará en la BD)
+        
+        # Opcional: si quieres un valor mínimo razonable
+        # if valor == 0:
+        #     raise forms.ValidationError("El valor debe ser mayor a cero.")
+        
         return valor
-
-
-
 
     # Muy importante: definir los formatos aceptados
     def __init__(self, *args, **kwargs):
