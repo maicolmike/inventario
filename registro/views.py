@@ -62,9 +62,9 @@ def exportar_equipos_excel(request):
 
     # Cabeceras
     columnas = [
-        'ID', 'Código', 'Descripción', 'Serial', 'Marca', 'Modelo', 'Color',
+        'ID', 'Código', 'Descripción', 'Serial', 'Marca', 'Modelo', 'Color','Cantidad',
         'Sucursal', 'Clasificación', 'Valor', 'Fecha Compra', 'Recursos',
-        'Estado', 'Cargo Funcionario', 'Funcionario Responsable',
+        'Estado', 'Cargo Funcionario', 'Funcionario Responsable','Nit',
         'Proveedor', 'Observaciones'
     ]
     ws.append(columnas)
@@ -79,6 +79,7 @@ def exportar_equipos_excel(request):
             equipo.marca,
             equipo.modelo,
             equipo.color,
+            equipo.cantidad,
             equipo.sucursal,
             equipo.clasificacion,
             float(equipo.valor),
@@ -87,6 +88,7 @@ def exportar_equipos_excel(request):
             equipo.estado,
             equipo.cargo_funcionario,
             equipo.funcionario_responsable,
+            equipo.nit,
             equipo.proveedor,
             equipo.observaciones or ""
         ]
