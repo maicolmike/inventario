@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %} <!-- Activar la librería de filtros en tu template: en settings.py ve a la parte de INSTALLED_APPS agrega 'django.contrib.humanize' -->
+
 
 {% block sinNada %}
 
@@ -50,7 +52,7 @@
                     <td>{{ equipo.color }}</td>
                     <td>{{ equipo.sucursal }}</td>
                     <td>{{ equipo.clasificacion }}</td>
-                    <td>${{ equipo.valor }}</td>
+                    <td>${{ equipo.valor|intcomma }}</td>  <!--|intcomma para utilizar eso se habilita load humanize  -->
                     <td>{{ equipo.fecha_compra }}</td>
                     <td>{{ equipo.recursos }}</td>
                     <td>{{ equipo.estado }}</td>
