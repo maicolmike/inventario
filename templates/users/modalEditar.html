@@ -32,6 +32,13 @@
             <div class="invalid-feedback" id="usernameError"></div>
           </div>
 
+          <!-- Campo Agencia -->
+          <div class="form-inline col-sm-12 mt-3">
+            <label class="control-label col-sm-4" for="agencia"><h5>Agencia</h5></label>
+            <select name="agencia" id="agencia{{ usuarios.id }}" class="form-control col-sm-7"></select>
+
+          </div>
+
           <!-- Campo Email -->
           <div class="form-inline col-sm-12 mt-3">
             <label class="control-label col-sm-4" for="userEmail"><h5>Email</h5></label>
@@ -70,3 +77,32 @@
   </div>
 </div>
 <!-- Final Modal Editar -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const agenciaSelect = document.getElementById("agencia{{ usuarios.id }}");
+      const AGENCIA_CHOICES = [
+          { value: 'Mocoa', display: 'Mocoa' },
+          { value: 'Puerto Asis', display: 'Puerto Asis' },
+          { value: 'Dorada', display: 'Dorada' },
+          { value: 'Hormiga', display: 'Hormiga' },
+          { value: 'Orito', display: 'Orito' },
+          { value: 'Villa Garzon', display: 'Villa Garzon' },
+          { value: 'Puerto Leguizamo', display: 'Puerto Leguizamo' },
+          { value: 'Sibundoy', display: 'Sibundoy' }
+      ];
+      const selectedAgencia = "{{ usuarios.agencia }}"; // Valor de la agencia seleccionada
+
+      console.log("Valor de agencia seleccionada: ", selectedAgencia); // Debugging
+
+      // Generar las opciones dinámicamente
+      AGENCIA_CHOICES.forEach(function(agencia) {
+          const option = document.createElement("option");
+          option.value = agencia.value;
+          option.textContent = agencia.display;
+          if (agencia.value === selectedAgencia) {
+              option.selected = true;
+          }
+          agenciaSelect.appendChild(option);
+      });
+  });
+</script>

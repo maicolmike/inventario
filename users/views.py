@@ -131,6 +131,7 @@ def UserUpdateView(request):
         user_id = request.POST.get('id')
         username = request.POST.get('username')
         first_name = request.POST.get('first_name')
+        agencia = request.POST.get('agencia')
         email = request.POST.get('userEmail')
         tipousuario = request.POST.get('tipousuario')
         estado = request.POST.get('estado')
@@ -146,6 +147,7 @@ def UserUpdateView(request):
         # Actualiza los campos con los nuevos valores
         user.username = username
         user.first_name = first_name
+        user.agencia = agencia
         user.email = email
         user.is_superuser = tipousuario
         user.is_active = estado
