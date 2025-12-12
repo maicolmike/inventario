@@ -110,26 +110,28 @@
                     {{ form.recursos }}
                 </div>
 
-                <div class="col-md-5">
-                    <label for="{{ form.cargo_funcionario.id_for_label }}">Cargo del Funcionario Responsable</label>
-                    {{ form.cargo_funcionario }}
+                <div class="col-md-3">
+                    <label for="{{ form.nit.id_for_label }}">Nit</label>
+                    {{ form.nit }}
+                </div>
+                <div class="col-md-6">
+                    <label for="{{ form.proveedor.id_for_label }}">Proveedor</label>
+                    {{ form.proveedor }}
                 </div>
 
-                <div class="col-md-4">
-                    <label for="{{ form.funcionario_responsable.id_for_label }}">Nombre del Funcionario Responsable</label>
-                    {{ form.funcionario_responsable }}
-                </div>
             </div>
 
             <!-- FILA 5 -->
             <div class="row mt-3">
-                <div class="col-md-4">
-                    <label for="{{ form.nit.id_for_label }}">Nit</label>
-                    {{ form.nit }}
+
+                <div class="col-md-6">
+                    <label for="{{ form.cargo_funcionario.id_for_label }}">Cargo del Funcionario Responsable</label>
+                    {{ form.cargo_funcionario }}
                 </div>
-                <div class="col-md-4">
-                    <label for="{{ form.proveedor.id_for_label }}">Proveedor</label>
-                    {{ form.proveedor }}
+
+                <div class="col-md-6">
+                    <label for="{{ form.funcionario_responsable.id_for_label }}">Nombre del Funcionario Responsable</label>
+                    {{ form.funcionario_responsable }}
                 </div>
                 
             </div>
