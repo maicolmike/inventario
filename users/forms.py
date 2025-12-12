@@ -26,6 +26,21 @@ class RegistroUsuario(forms.Form):
                                widget=forms.PasswordInput(attrs={'class': 'form-control',
                                                              'id': 'password',
                                                              'placeholder': 'Password'}))
+    AGENCIA_CHOICES = [
+    ('', ''),
+    ('Mocoa', 'Mocoa'),
+    ('Villagarzon', 'Villagarzon'),
+    ('Puerto Asis', 'Puerto Asis'),
+    ('Puerto Leguizamo', 'Puerto Leguizamo'),
+    ('Orito', 'Orito'),
+    ('Hormiga', 'Hormiga'),
+    ('Dorada', 'Dorada'),
+    ('Sibundoy', 'Sibundoy'),
+]
+    agencia = forms.ChoiceField(choices=AGENCIA_CHOICES, required=True, label='agencia',
+                                widget=forms.Select(attrs={'class': 'form-control',
+                                                           'id': 'agencia',
+                                                           'placeholder': 'agencia'}))
     email = forms.EmailField(required=True,
                              widget=forms.EmailInput(attrs={'class': 'form-control',
                                                              'id': 'email',
@@ -54,9 +69,10 @@ class RegistroUsuario(forms.Form):
         username = self.cleaned_data['username']
         first_name = self.cleaned_data['first_name']
         password = self.cleaned_data['password']
+        agencia = self.cleaned_data['agencia']
         email = self.cleaned_data['email']
 
-        user = User.objects.create_user(username=username, first_name=first_name, email=email, password=password)
+        user = User.objects.create_user(username=username, first_name=first_name, email=email, password=password,agencia=agencia)
         
         return user
 

@@ -14,6 +14,7 @@
                         <th class="sorting sorting_asc">Id</th>
                         <th>Usuario</th>
                         <th style="width: 140px;">Nombre</th>
+                        <th style="width: 140px;">Agencia</th>
                         <th>Email</th>
                         <th style="width: 140px;">Tipo usuario</th>
                         <th style="width: 140px;">Estado usuario</th>
@@ -28,6 +29,7 @@
                         <td>{{ usuarios.id }}</td>
                         <td>{{ usuarios.username }}</td>
                         <td>{{ usuarios.first_name }}</td>
+                        <td>{{ usuarios.agencia }}</td>
                         <td>{{ usuarios.email }}</td>
                         {% if usuarios.is_superuser == 1 %}
                           <td>Administrador</td>
