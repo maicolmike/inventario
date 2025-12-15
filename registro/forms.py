@@ -28,13 +28,13 @@ CODIGO = [
 SUCURSAL = [
     ('', 'Seleccionar'),
     ('Mocoa', 'Mocoa'),
-    ('Villagarzon', 'Villagarzon'),
-    ('Puerto Asis', 'Puerto Asis'),
-    ('Puerto Leguizamo', 'Puerto Leguizamo'),
-    ('Orito', 'Orito'),
-    ('Hormiga', 'Hormiga'),
-    ('Dorada', 'Dorada'),
     ('Sibundoy', 'Sibundoy'),
+    ('Puerto Asis', 'Puerto Asis'),
+    ('Hormiga', 'Hormiga'),
+    ('Orito', 'Orito'),
+    ('Puerto Leguizamo', 'Puerto Leguizamo'),
+    ('Dorada', 'Dorada'),
+    ('Villagarzon', 'Villagarzon'),
 ]
 
 CLASIFICACION = [

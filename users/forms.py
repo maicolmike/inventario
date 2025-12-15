@@ -27,15 +27,15 @@ class RegistroUsuario(forms.Form):
                                                              'id': 'password',
                                                              'placeholder': 'Password'}))
     AGENCIA_CHOICES = [
-    ('', ''),
+    ('', 'Seleccionar'),
     ('Mocoa', 'Mocoa'),
-    ('Villagarzon', 'Villagarzon'),
-    ('Puerto Asis', 'Puerto Asis'),
-    ('Puerto Leguizamo', 'Puerto Leguizamo'),
-    ('Orito', 'Orito'),
-    ('Hormiga', 'Hormiga'),
-    ('Dorada', 'Dorada'),
     ('Sibundoy', 'Sibundoy'),
+    ('Puerto Asis', 'Puerto Asis'),
+    ('Hormiga', 'Hormiga'),
+    ('Orito', 'Orito'),
+    ('Puerto Leguizamo', 'Puerto Leguizamo'),
+    ('Dorada', 'Dorada'),
+    ('Villagarzon', 'Villagarzon'),
 ]
     agencia = forms.ChoiceField(choices=AGENCIA_CHOICES, required=True, label='agencia',
                                 widget=forms.Select(attrs={'class': 'form-control',
