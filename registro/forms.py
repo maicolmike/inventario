@@ -301,7 +301,8 @@ class EquipoForm(forms.ModelForm):
         }
 
         # Validar solo si ambos campos vienen seleccionados
-        if codigo in reglas and sucursal != reglas[codigo]:
+        #if codigo in reglas and sucursal != reglas[codigo]:
+        if codigo and sucursal and sucursal != reglas.get(codigo):
             self.add_error(
                 "sucursal",
                 f"El código {codigo} solo permite la sucursal {reglas[codigo]}."
