@@ -275,6 +275,43 @@ class EquipoForm(forms.ModelForm):
         
         return valor
 
+    def clean(self):
+        cleaned_data = super().clean()
+        codigo = cleaned_data.get("codigo")
+        sucursal = cleaned_data.get("sucursal")
+
+        # Reglas de negocio
+        reglas = {
+            "AG01-FDO": "Mocoa",
+            "AG01-NMT": "Mocoa",
+            "AG02-FDO": "Sibundoy",
+            "AG02-NMT": "Sibundoy",
+            "AG03-FDO": "Puerto Asis",
+            "AG03-NMT": "Puerto Asis",
+            "AG04-FDO": "Hormiga",
+            "AG04-NMT": "Hormiga",
+            "AG05-FDO": "Orito",
+            "AG05-NMT": "Orito",
+            "AG06-FDO": "Puerto Leguizamo",
+            "AG06-NMT": "Puerto Leguizamo",
+            "AG07-FDO": "Dorada",
+            "AG07-NMT": "Dorada",
+            "AG08-FDO": "Villagarzon",
+            "AG08-NMT": "Villagarzon",
+        }
+
+        # Validar solo si ambos campos vienen seleccionados
+        if codigo and sucursal and codigo in reglas:
+            sucursal_correcta = reglas[codigo]
+
+            if sucursal != sucursal_correcta:
+                self.add_error(
+                    "sucursal",
+                    f"El código {codigo} solo puede asignarse a la sucursal {sucursal_correcta}."
+                )
+
+        return cleaned_data
+
     # Muy importante: definir los formatos aceptados
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
