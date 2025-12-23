@@ -240,21 +240,26 @@ class EquipoForm(forms.ModelForm):
     # capitalize = primera mayuscula
     # -------------------------
 
+    # -------------------------
+    # NORMALIZACIÓN DE CAMPOS
+    # -------------------------
+
     def clean_marca(self):
-        marca = self.cleaned_data["marca"]
-        return marca.upper().strip()  # ejemplo: HP, LENOVO
+        return normalizar(self.cleaned_data.get("marca"))
 
     def clean_modelo(self):
-        modelo = self.cleaned_data["modelo"]
-        return modelo.upper().strip()
+        return normalizar(self.cleaned_data.get("modelo"))
 
     def clean_color(self):
-        color = self.cleaned_data["color"]
-        return color.capitalize().strip()
+        return normalizar(self.cleaned_data.get("color"))
+
+    def clean_proveedor(self):
+        return normalizar(self.cleaned_data.get("proveedor"))
 
     def clean_funcionario_responsable(self):
-        nombre = self.cleaned_data["funcionario_responsable"]
-        return " ".join([p.capitalize() for p in nombre.lower().split()])
+        return normalizar(self.cleaned_data.get("funcionario_responsable"))
+        #nombre = self.cleaned_data["funcionario_responsable"]
+        #return " ".join([p.capitalize() for p in nombre.lower().split()])
 
     def clean_valor(self):
         # Obtenemos el valor crudo del formulario (string con posibles puntos)
