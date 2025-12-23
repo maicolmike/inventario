@@ -4,22 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Relación código → sucursal
     const reglas = {
-        "AG01-FDO": "Mocoa",
-        "AG01-NMT": "Mocoa",
-        "AG02-FDO": "Sibundoy",
-        "AG02-NMT": "Sibundoy",
-        "AG03-FDO": "Puerto Asis",
-        "AG03-NMT": "Puerto Asis",
-        "AG04-FDO": "Hormiga",
-        "AG04-NMT": "Hormiga",
-        "AG05-FDO": "Orito",
-        "AG05-NMT": "Orito",
-        "AG06-FDO": "Puerto Leguizamo",
-        "AG06-NMT": "Puerto Leguizamo",
-        "AG07-FDO": "Dorada",
-        "AG07-NMT": "Dorada",
-        "AG08-FDO": "Villagarzon",
-        "AG08-NMT": "Villagarzon",
+        "ag01-fdo": "mocoa",
+        "ag01-nmt": "mocoa",
+        "ag02-fdo": "sibundoy",
+        "ag02-nmt": "sibundoy",
+        "ag03-fdo": "puerto asis",
+        "ag03-nmt": "puerto asis",
+        "ag04-fdo": "hormiga",
+        "ag04-nmt": "hormiga",
+        "ag05-fdo": "orito",
+        "ag05-nmt": "orito",
+        "ag06-fdo": "puerto leguizamo",
+        "ag06-nmt": "puerto leguizamo",
+        "ag07-fdo": "dorada",
+        "ag07-nmt": "dorada",
+        "ag08-fdo": "villagarzon",
+        "ag08-nmt": "villagarzon"
     };
 
     codigoSelect.addEventListener("change", function () {
