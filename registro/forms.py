@@ -39,13 +39,13 @@ SUCURSAL = [
 
 CLASIFICACION = [
     ('', 'Seleccionar'),
-    ('Equipo de cómputo', 'Equipo de cómputo'),
-    ('Equipo de comunicación y audiovisual', 'Equipo de comunicación y audiovisual'),
-    ('Electrodomésticos', 'Electrodomésticos'),
-    ('Menaje', 'Menaje'),
-    ('Adornos', 'Adornos'),
-    ('Muebles y enseres', 'Muebles y enseres'),
-    ('Otros', 'Otros'),
+    ('equipo de computo', 'Equipo de cómputo'),
+    ('equipo de comunicacion y audiovisual', 'Equipo de comunicación y audiovisual'),
+    ('electrodomesticos', 'Electrodomésticos'),
+    ('menaje', 'Menaje'),
+    ('adornos', 'Adornos'),
+    ('muebles y enseres', 'Muebles y enseres'),
+    ('otros', 'Otros'),
 ]
 
 RECURSOS = [
@@ -198,7 +198,7 @@ class EquipoForm(forms.ModelForm):
             'codigo': forms.Select(attrs={'class': 'form-control'}, choices=CODIGO),
             'descripcion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Descripción del elemento'}),
             'serial': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Serial'}),
-            'marca': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Marca'}),
+            'marca': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Marca'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Modelo'}),
             'color': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Color'}),
             'cantidad': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Cantidad'}),
