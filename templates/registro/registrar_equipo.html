@@ -18,16 +18,17 @@
         <form method="post">
             <!-- validar errores -->
             {% if form.errors %}
-                <div class="alert alert-danger">
-                    <strong>Corrige los siguientes errores:</strong>
-                    <ul>
-                        {% for field in form %}
-                            {% if field.errors %}
-                                <li><b>{{ field.label }}:</b> {{ field.errors|striptags }}</li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Corrige los siguientes errores:</strong>
+                <ul class="mb-0">
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <li><b>{{ field.label }}:</b> {{ field.errors|striptags }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             {% endif %}
 
             {% csrf_token %}
