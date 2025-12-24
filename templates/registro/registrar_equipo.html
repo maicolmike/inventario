@@ -61,7 +61,13 @@
                 
                 <div class="col-md-3">
                     <label for="{{ form.marca.id_for_label }}">Marca</label>
-                    {{ form.marca }}
+                    <select
+                    id="id_marca"
+                    name="marca"
+                    class="form-control"
+                    data-current="{{ form.instance.marca|default:'' }}">
+                    <option value="">Seleccionar</option>
+                    </select>
                 </div>
 
                 <div class="col-md-3">
