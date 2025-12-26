@@ -52,11 +52,11 @@ SUCURSAL = [
 
 CLASIFICACION = [
     ('', 'Seleccionar'),
+    ('adornos', 'Adornos'),
+    ('electrodomesticos', 'Electrodomésticos'),
     ('equipo de computo', 'Equipo de cómputo'),
     ('equipo de comunicacion y audiovisual', 'Equipo de comunicación y audiovisual'),
-    ('electrodomesticos', 'Electrodomésticos'),
     ('menaje', 'Menaje'),
-    ('adornos', 'Adornos'),
     ('muebles y enseres', 'Muebles y enseres'),
     ('otros', 'Otros'),
 ]
