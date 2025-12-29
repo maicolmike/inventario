@@ -63,19 +63,20 @@ CLASIFICACION = [
 
 RECURSOS = [
     ('', 'Seleccionar'),
-    ('gasto', 'Gasto'),
     ('fondo de educacion', 'Fondo de Educación'),
     ('fondo de solidaridad', 'Fondo de Solidaridad'),
+    ('gasto', 'Gasto'),
     ('otro', 'Otro'),
 ]
 
+
 ESTADO = [
     ('', 'Seleccionar'),
-    ('nuevo', 'Nuevo'),
     ('bueno', 'Bueno'),
-    ('regular', 'Regular'),
     ('malo', 'Malo'),
+    ('nuevo', 'Nuevo'),
     ('obsoleto', 'Obsoleto'),
+    ('regular', 'Regular'),
 ]
 
 CARGO_FUNCIONARIO = [
@@ -195,6 +196,31 @@ FUNCIONARIO_RESPONSABLE = [
     ('yurany del pilar rodriguez ceballos', 'Yurany Del Pilar Rodriguez Ceballos'),
 ]
 
+COLOR = [
+    ('', 'Seleccionar'),
+    ('amarillo', 'Amarillo'),
+    ('azul', 'Azul'),
+    ('beige', 'Beige'),
+    ('blanco', 'Blanco'),
+    ('cafe', 'Café'),
+    ('celeste', 'Celeste'),
+    ('cian', 'Cian'),
+    ('dorado', 'Dorado'),
+    ('fucsia', 'Fucsia'),
+    ('gris', 'Gris'),
+    ('marron', 'Marrón'),
+    ('morado', 'Morado'),
+    ('naranja', 'Naranja'),
+    ('negro', 'Negro'),
+    ('plateado', 'Plateado'),
+    ('rojo', 'Rojo'),
+    ('rosado', 'Rosado'),
+    ('turquesa', 'Turquesa'),
+    ('verde', 'Verde'),
+    ('violeta', 'Violeta'),
+]
+
+
 
 
 # -------------------------
@@ -213,7 +239,7 @@ class EquipoForm(forms.ModelForm):
             'serial': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Serial'}),
             'marca': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Marca'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Modelo'}),
-            'color': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Color'}),
+            'color': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Color'}, choices=COLOR),
             'cantidad': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Cantidad'}),
 
             'sucursal': forms.Select(attrs={'class': 'form-control'}, choices=SUCURSAL),
@@ -221,13 +247,15 @@ class EquipoForm(forms.ModelForm):
 
             'valor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Valor','inputmode': 'numeric','autocomplete': 'off'}),
             'fecha_compra': forms.DateInput(format='%Y-%m-%d',attrs={'class': 'form-control', 'type': 'date'}),
+            'fecha_entrega': forms.DateInput(format='%Y-%m-%d',attrs={'class': 'form-control', 'type': 'date'}),
+            'numero_acta': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Numero acta'}),
 
             'recursos': forms.Select(attrs={'class': 'form-control'}, choices=RECURSOS),
             'estado': forms.Select(attrs={'class': 'form-control'}, choices=ESTADO),
 
             'cargo_funcionario': forms.Select(attrs={'class': 'form-control'}, choices=CARGO_FUNCIONARIO),
             'funcionario_responsable': forms.Select(attrs={'class': 'form-control'}, choices=FUNCIONARIO_RESPONSABLE),
-            'nit': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nit'}),
+            'nit_proveedor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nit'}),
             'proveedor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Proveedor'}),
 
             'observaciones': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
@@ -332,3 +360,4 @@ class EquipoForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['fecha_compra'].input_formats = ['%Y-%m-%d']
+        self.fields['fecha_entrega'].input_formats = ['%Y-%m-%d']

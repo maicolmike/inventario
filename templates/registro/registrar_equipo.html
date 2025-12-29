@@ -13,7 +13,14 @@
     {% include 'messages.html' %}
 
     <div class="container">
-        <h2 class="my-3">Registrar Elemento de Inventario</h2>
+        <h2 class="my-3">
+            {% if form.instance.pk %}
+                Editar Elemento de Inventario
+            {% else %}
+                Registrar Elemento de Inventario
+            {% endif %}
+        </h2>
+
 
         <form method="post">
             <!-- validar errores -->
@@ -105,11 +112,20 @@
                     <label for="{{ form.fecha_compra.id_for_label }}">Fecha de Compra</label>
                     {{ form.fecha_compra }}
                 </div>
-
+                
             </div>
 
-            <!-- FILA 4 -->
+             <!-- FILA 4 -->
             <div class="row mt-4">
+                <div class="col-md-3">
+                    <label for="{{ form.fecha_entrega.id_for_label }}">Fecha de Entrega</label>
+                    {{ form.fecha_entrega }}
+                </div>
+
+                <div class="col-md-2">
+                    <label for="{{ form.numero_acta.id_for_label }}">Número Acta</label>
+                    {{ form.numero_acta }}
+                </div>
 
                 <div class="col-md-2">
                     <label for="{{ form.estado.id_for_label }}">Estado</label>
@@ -120,14 +136,10 @@
                     <label for="{{ form.recursos.id_for_label }}">Recursos</label>
                     {{ form.recursos }}
                 </div>
-                
-                <div class="col-md-3">
-                    <label for="{{ form.nit.id_for_label }}">Nit</label>
-                    {{ form.nit }}
-                </div>
-                <div class="col-md-4">
-                    <label for="{{ form.proveedor.id_for_label }}">Proveedor</label>
-                    {{ form.proveedor }}
+
+                <div class="col-md-2">
+                    <label for="{{ form.nit_proveedor.id_for_label }}">Nit Proveedor</label>
+                    {{ form.nit_proveedor }}
                 </div>
 
             </div>
@@ -135,12 +147,17 @@
             <!-- FILA 5 -->
             <div class="row mt-4">
 
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <label for="{{ form.proveedor.id_for_label }}">Proveedor</label>
+                    {{ form.proveedor }}
+                </div>
+
+                <div class="col-md-4">
                     <label for="{{ form.cargo_funcionario.id_for_label }}">Cargo del Funcionario Responsable</label>
                     {{ form.cargo_funcionario }}
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="{{ form.funcionario_responsable.id_for_label }}">Nombre del Funcionario Responsable</label>
                     {{ form.funcionario_responsable }}
                 </div>

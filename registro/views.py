@@ -63,8 +63,8 @@ def exportar_equipos_excel(request):
     # Cabeceras
     columnas = [
         'ID', 'Código', 'Descripción', 'Serial', 'Marca', 'Modelo', 'Color','Cantidad',
-        'Sucursal', 'Clasificación', 'Valor', 'Fecha Compra', 'Recursos',
-        'Estado', 'Cargo Funcionario', 'Funcionario Responsable','Nit',
+        'Sucursal', 'Clasificación', 'Valor', 'Fecha Compra', 'Fecha Entrega','Número de Acta','Recursos',
+        'Estado', 'Cargo Funcionario', 'Funcionario Responsable','Nit Proveedor',
         'Proveedor', 'Observaciones'
     ]
     ws.append(columnas)
@@ -84,11 +84,13 @@ def exportar_equipos_excel(request):
             equipo.clasificacion,
             float(equipo.valor),
             equipo.fecha_compra.strftime('%d/%m/%Y') if equipo.fecha_compra else "",
+            equipo.fecha_entrega.strftime('%d/%m/%Y') if equipo.fecha_entrega else "",
+            equipo.numero_acta,
             equipo.recursos,
             equipo.estado,
             equipo.cargo_funcionario,
             equipo.funcionario_responsable,
-            equipo.nit,
+            equipo.nit_proveedor,
             equipo.proveedor,
             equipo.observaciones or ""
         ]

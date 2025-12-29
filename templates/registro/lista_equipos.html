@@ -28,11 +28,13 @@
                     <th>Clasificación</th>
                     <th>Valor</th>
                     <th>Fecha Compra</th>
+                    <th>Fecha entrega</th>
+                    <th>Numero de acta</th>
                     <th>Recursos</th>
                     <th>Estado</th>
                     <th>Cargo Funcionario</th>
                     <th>Funcionario Responsable</th>
-                    <th>Nit</th>
+                    <th>Nit Proveedor</th>
                     <th>Proveedor</th>
                     <th>Observaciones</th>
                     <th>Editar</th>
@@ -57,11 +59,13 @@
                     <td>{{ equipo.clasificacion }}</td>
                     <td>${{ equipo.valor|intcomma }}</td>  <!--|intcomma para utilizar eso se habilita load humanize  -->
                     <td>{{ equipo.fecha_compra }}</td>
+                    <td>{{ equipo.fecha_entrega }}</td>
+                    <td>{{ equipo.numero_acta }}</td>
                     <td>{{ equipo.recursos }}</td>
                     <td>{{ equipo.estado }}</td>
                     <td>{{ equipo.cargo_funcionario }}</td>
                     <td>{{ equipo.funcionario_responsable }}</td>
-                    <td>{{ equipo.nit }}</td>
+                    <td>{{ equipo.nit_proveedor }}</td>
                     <td>{{ equipo.proveedor }}</td>
 
                     <!-- Observaciones con truncado -->
