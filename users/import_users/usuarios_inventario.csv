@@ -1,0 +1,78 @@
+id,password,last_login,is_superuser,username,first_name,last_name,email,is_staff,is_active,date_joined,is_admin,agencia
+,,,,ACHAMO,ALFREDO RICARDO CHAMORRO BURBANO,,credito@cootep.com.co,0,1,,,MOCOA
+,,,,ACAICE,AMILDA BERENICE CAICEDO CAICEDO,,agenciaorito@cootep.com.co,0,1,,,ORITO
+,,,,ASEGUR,ANA MARLY SEGURA DIAZ,,agenciahormiga@cootep.com.co,0,1,,,HORMIGA
+,,,,MIRUAN,ANA MILENA RUANO CHAMORRO,,ana.ruano@cootep.com.co,0,1,,,HORMIGA
+,,,,AROSER,ANA VIKY ROSERO ADARME,,contabilidad@cootep.com.co,0,1,,,MOCOA
+,,,,ANVER,ANDREA CAROLINA VERDUGO BENAVIDES,,asiscontabilidad@cootep.com.co,0,1,,,MOCOA
+,,,,DVALLE,ANDREA DANIELA VALLEJOS PULIDO,,asesororito1@cootep.com.co,0,1,,,ORITO
+,,,,AURBAN,ANGELA MILENA URBANO NARVAEZ,,atencionalcliente@cootep.com.co,0,1,,,MOCOA
+,,,,BGUERR,BRANDON DANILO GUERRERO JAJOY,,asesorsibundoy1@cootep.com.co,0,1,,,SIBUNDOY
+,,,,ACARVA,ELIAS ADIRVEY GALVIS CARVAJAL,,asesormocoa6@cootep.com.co,0,1,,,MOCOA
+,,,,CAAZAM,CAMILO ALEJANDRO ZAMBRANO HERNANDEZ,,corresponsalvillagarzon@cootep.com.co,0,1,,,VILLA GARZON
+,,,,CCAICE,CARLOS HERNAN CAICEDO RAMOS,,auxcaja01@cootep.com.co,0,1,,,MOCOA
+,,,,IVAROM,CARLOS IVAN ROMERO BASTIDAS,,agenciamocoa@cootep.com.co,0,1,,,MOCOA
+,,,,CGARCI,CARLOS REINALDO GARCIA NASTAR,,riesgos@cootep.com.co,0,1,,,MOCOA
+,,,,HZAMBR,HERNAN SANTIAGO ZAMBRANO ENRIQUEZ,,microcreditosibundoy@cootep.com.co,0,1,,,SIBUNDOY
+,,,,CGAVIR,CLAUDIA PAOLA GAVIRIA DIAZ,,auxagenciapuerto@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,CCORDO,CRISTHIAN ANDRES OLARTE CORDOBA,,asesordeservicios@cootep.com.co,0,1,,,MOCOA
+,,,,CROBLE,CRISTIAN MANUEL ROBLES,,auxsistemas@cootep.com.co,0,1,,,MOCOA
+,,,,DTORRES,DANNY YULIETH TORRES CASTRO,,asistente.oym@cootep.com.co,0,1,,,MOCOA
+,,,,MQUENA,DEYVY MILENA MUÑOZ QUENAN,,asesorapuertoasis@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,DACERO,DIANA ALEJANDRA ACERO CARRILLO,,subgerencia@cootep.com.co,0,1,,,MOCOA
+,,,,DREYES,DIANA EMILSE REYES SOLARTE,,diana.reyes@cootep.com.co,0,1,,,SIBUNDOY
+,,,,DCONGO,DIANA YADIRA CONGOTE ANDRADE,,asistenteriesgos@cootep.com.co,0,1,,,MOCOA
+,,,,XNARVA,EDNA XIMENA NARVAEZ RAMIREZ,,auxleguizamo@cootep.com.co,0,1,,,PUERTO LEGUIZAMO
+,,,,ECUARA,EDUARDO CUARAN TIPAZ,,microcreditoorito@cootep.com.co,0,1,,,HORMIGA
+,,,,DPEREZ,JERSON DAVID SOLARTE PEREZ,,coordinadordorada@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,MAELV,ELVER MAURICIO GRUESO VAINAS,,saludocupacional@cootep.com.co,0,1,,,MOCOA
+,,,,FAGELO,FABIAN LOPEZ GETIAL,,jcomercial@cootep.com.co,0,1,,,MOCOA
+,,,,LBENAV,LAURA SOFIA ALVARADO BENAVIDES,,lauraalvarado9511@gmail.com,0,1,,,MOCOA
+,,,,FOJEDA,FAVIO NELSON OJEDA GOMEZ,,asesormocoa5@cootep.com.co,0,1,,,MOCOA
+,,,,FAGUIN,FREDDY ALBERTO GUINCHIN ESTRADA,,agenciaptoasis@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,GRODRI,GERLIN DUVAN RODRIGUEZ PORTILLO,,asesorhormiga2@cootep.com.co,0,1,,,HORMIGA
+,,,,GECRUZ,GERMAN DARIO DE LA CRUZ CHAVEZ,,microcreditohormiga@cootep.com.co,0,1,,,HORMIGA
+,,,,GLADAP,GLADIS YANET APRAEZ TAPIAS,,microcreditopuerto@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,HPARRA,HERNAN ANTURY PARRA,,auxcontabilidad@cootep.com.co,0,1,,,MOCOA
+,,,,HBURBA,HERNAN FROILAN BURBANO CAICEDO,,agenciasibundoy@cootep.com.co,0,1,,,SIBUNDOY
+,,,,HGUTIE,HOLMER GUTIERREZ URBANO,,asistentecartera@cootep.com.co,0,1,,,MOCOA
+,,,,IOBAND,IRMA YOLANDA OBANDO MORA,,tesoreria@cootep.com.co,0,1,,,MOCOA
+,,,,JGUERR,JAIDER ALFONSO GUERRA SANCHEZ,,jaider.guerra@cootep.com.co,0,1,,,HORMIGA
+,,,,JROCER,JAIME FERNANDO ROSERO SANCHEZ,,sistemas@cootep.com.co,0,1,,,MOCOA
+,,,,OROSER,JAVIER OLMEDO ACOSTA ROSERO,,olmedoacosta@outlook.com,0,1,,,MOCOA
+,,,,YVARGA,JEIMY KATERINE VARGAS ARENAS,,auxiliarptoasis2@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,JORTIZ,JENNY MARINA ORTIZ CARLOSAMA,,coordinadorsibundoy@cootep.com.co,0,1,,,SIBUNDOY
+,,,,JGARCI,JESUS ALBERTO GARCIA MUÑOZ,,auditoria@cootep.com.co,0,1,,,MOCOA
+,,,,JRIASC,JHAN BRANDON RIASCOS MARTINEZ,,organizacionymetodos@cootep.com.co,0,1,,,MOCOA
+,,,,JMORAL,JOHANA MARITZA MORALES CARDENAS,,auxiliarptoasis4@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,JOMAPE,JONATHAN MAURICIO PEJENDINO ROSERO,,talentohumano@cootep.com.co,0,1,,,SIBUNDOY
+,,,,JDELGA,KAREN JACKELINE CAMPAÑA DELGADO,,karen.delgado@cootep.com.co,0,1,,,ORITO
+,,,,KAVILL,KAREN LILIANA VILLOTA HERNANDEZ,,juridico@cootep.com.co,0,1,,,MOCOA
+,,,,KGUERR,KELY MABEL GUERRERO LAZO,,asesorptoasis5@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,CGALA,KEVIN CAMILO GALARRAGA CORDOBA,,oficialdecumplimiento@cootep.com.co,0,1,,,MOCOA
+,,,,KPANTO,LICETH KAROLINA PANTOJA MORA,,karolina.pantoja@cootep.com.co,0,1,,,VILLA GARZON
+,,,,LHERRE,LORENA LISETH HERRERA MONCAYO,,cartera@cootep.com.co,0,1,,,MOCOA
+,,,,LCHAMO,LORENA LISSETH PAZ CHAMORRO,,asesordorada1@cootep.com.co,0,1,,,DORADA
+,,,,LJAMAU,LUIS JAIDE JAMAUCA CORREA,,luis.jamauca@cootep.com.co,0,1,,,MOCOA
+,,,,FCRIOL,LUISA FERNANDA CUERO CRIOLLO,,secretaria@cootep.com.co,0,1,,,MOCOA
+,,,,MSANAB,MAGDA JOHANA SANABRIA TEJADA,,agencialeguizamo@cootep.com.co,0,1,,,PUERTO LEGUIZAMO
+,,,,ODIAZ,MARIA OLGA DIAZ,,archivo@cootep.com.co,0,1,,,MOCOA
+,,,,MARDUE,MARIO STEBAN DUEÑAS DE LA CRUZ,,asistente.auditoria@cootep.com.co,0,1,,,MOCOA
+,,,,MGUERR,MARY LUCY GUERRON MADROÑERO,,auxcartera01@cootep.com.co,0,1,,,MOCOA
+,,,,MYELA,MICHAEL YELA VALENCIA,,soportesistemas@cootep.com.co,0,1,,,MOCOA
+,,,,MIPOCA,MYRIAM MILENA PORTILLO CASTRO,,operacionesmocoa@cootep.com.co,0,1,,,MOCOA
+,,,,NPIMEN,NASSON PIMENTEL CRIOLLO,,auxiliarleguizamo@cootep.com.co,0,1,,,PUERTO LEGUIZAMO
+,,,,JVILLA,NINFA JHOJANA CANAMEJOY VILLAMUES,,johana1201@gmail.com,0,1,,,PUERTO ASIS
+,,,,ANARVA,OSWALDO ALEJANDRO NARVAEZ ARAUJO,,auxiliarmocoa2@cootep.com.co,0,1,,,MOCOA
+,,,,RMALUA,RAQUEL MALUA SAYALPUD,,gerencia@cootep.com.co,0,1,,,MOCOA
+,,,,ASOLAR,RUTH ALEIDA CUARAN SOLARTE,,asesorhormiga1@cootep.com.co,0,1,,,HORMIGA
+,,,,SCUBIL,SONIA YANETH CUBILLOS BELTRAN,,asesorhormiga3@cootep.com.co,0,1,,,HORMIGA
+,,,,WMARC,WILBER MARCIAL PEREZ MAYTAHUARI,,wilbertmarcialperez@gmail.com,0,1,,,PUERTO LEGUIZAMO
+,,,,WMOREN,WILMER MORENO ESTRADA,,oficialseguridad@cootep.com.co,0,1,,,MOCOA
+,,,,YMOREN,YERZON DUVAN MORENO SANCHEZ,,auxiliarptoasis1@cootep.com.co,0,1,,,PUERTO ASIS
+,,,,YORDON,YESICA OBANDO ORDOÑEZ,,agenciadorada@cootep.com.co,0,1,,,DORADA
+,,,,YHENAO,YUDY ANDREA HENAO LOPEZ,,asistentecomercial@cootep.com.co,0,1,,,MOCOA
+,,,,YRODRI,YURANY DEL PILAR RODRIGUEZ CEBALLOS,,coordinadororito@cootep.com.co,0,1,,,ORITO
+,,,,ZGUERR,AYDA ZULEYMA GUERRERO RIASCOS,,caja.villagarzon@serlogyc.com.co,0,1,,,VILLA GARZON
+,,,,MZAMOR,MARIBEL MARICELA ZAMORA ASCUNTAR,,asesormocoa5@cootep.com.co,0,1,,,MOCOA
+,,,,MCASTI,MERY NORBEYI CASTILLO NUPAN,,maiacas1995@hotmail.com,0,1,,,MOCOA
