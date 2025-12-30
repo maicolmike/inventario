@@ -1,0 +1,62 @@
+<div class="modal fade" id="modalEditar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <form action="{% url 'updateusuarios' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" id="edit_id">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Editar Usuario</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="form-inline col-sm-12 mt-3">
+            <label><h5>Usuario</h5></label>
+            <input class="form-control" id="edit_username" name="username">
+          </div>
+
+          <div class="form-inline col-sm-12 mt-3">
+            <label><h5>Nombre</h5></label>
+            <input class="form-control" id="edit_first_name" name="first_name">
+          </div>
+
+          <div class="form-inline col-sm-12 mt-3">
+            <label><h5>Agencia</h5></label>
+            <select name="agencia" id="edit_agencia" class="form-control"></select>
+          </div>
+
+          <div class="form-inline col-sm-12 mt-3">
+            <label><h5>Email</h5></label>
+            <input class="form-control" id="edit_email" name="userEmail">
+          </div>
+
+          <div class="form-inline col-sm-12 mt-3">
+            <label><h5>Tipo Usuario</h5></label>
+            <select name="tipousuario" id="edit_superuser" class="form-control">
+              <option value="1">Administrador</option>
+              <option value="0">Cliente</option>
+            </select>
+          </div>
+
+          <div class="form-inline col-sm-12 mt-3">
+            <label><h5>Estado</h5></label>
+            <select name="estado" id="edit_active" class="form-control">
+              <option value="1">Activo</option>
+              <option value="0">Inactivo</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block sinNada %}
-
-<div class="container-fluid mt-4">
+<div class="container-fluid">
+  <br><br><br>
 
     {% include 'messages.html' %}
 
@@ -18,8 +18,8 @@
                     <th>Nombre</th>
                     <th>Agencia</th>
                     <th>Email</th>
-                    <th>Tipo usuario</th>
-                    <th>Estado usuario</th>
+                    <th>Tipo</th>
+                    <th>Estado</th>
                     <th>Editar</th>
                     <th>Clave</th>
                     <th>Borrar</th>
@@ -27,7 +27,7 @@
             </thead>
 
             <tbody>
-                {% for usuarios in lista_usuarios %}
+            {% for usuarios in lista_usuarios %}
                 <tr>
                     <td class="text-center">{{ usuarios.id }}</td>
                     <td>{{ usuarios.username }}</td>
@@ -52,40 +52,48 @@
                     </td>
 
                     <td class="text-center">
-                        <button class="btn btn-info"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalEditar{{ usuarios.id }}">
+                        <button class="btn btn-info btn-editar"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalEditar"
+                            data-id="{{ usuarios.id }}"
+                            data-username="{{ usuarios.username }}"
+                            data-first_name="{{ usuarios.first_name }}"
+                            data-email="{{ usuarios.email }}"
+                            data-agencia="{{ usuarios.agencia }}"
+                            data-superuser="{{ usuarios.is_superuser }}"
+                            data-active="{{ usuarios.is_active }}">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
                     </td>
 
                     <td class="text-center">
-                        <button class="btn btn-success"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalClave{{ usuarios.id }}">
+                        <button class="btn btn-success btn-clave"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalClave"
+                            data-id="{{ usuarios.id }}">
                             <i class="fa-solid fa-key"></i>
                         </button>
                     </td>
 
                     <td class="text-center">
-                        <button class="btn btn-danger"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalEliminar{{ usuarios.id }}">
+                        <button class="btn btn-danger btn-eliminar"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalEliminar"
+                            data-id="{{ usuarios.id }}"
+                            data-username="{{ usuarios.username }}">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </td>
                 </tr>
-
-                {# ⚠️ AQUÍ SIGUE EL PROBLEMA DE RENDIMIENTO #}
-                {% include 'users/modalEditar.html' %}
-                {% include 'users/modalClave.html' %}
-                {% include 'users/modalEliminar.html' %}
-
-                {% endfor %}
+            {% endfor %}
             </tbody>
         </table>
     </div>
-
 </div>
 
+{% include 'users/modalEditar_unico.html' %}
+{% include 'users/modalClave_unico.html' %}
+{% include 'users/modalEliminar_unico.html' %}
+
+<script src="{% static 'js/users/usuarios_modales.js' %}"></script>
 {% endblock %}
