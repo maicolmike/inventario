@@ -54,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "muebles y enseres": [
             "Actiu","Alkosto","Ashley Furniture","Brabantia","Comodísimos","Curver",
             "El Dorado","Falabella","Forma 5","Haworth","Herman Miller","Homecenter",
-            "Home Elements","IKEA","Linea Italia","Maderkit","Muebles Jamar",
+            "Home Elements","IKEA","Lifetime","Linea Italia","Maderkit","Muebles Jamar",
             "Muebles Rimo","Ofimuebles","Ofix","Organitodo","Paraíso",
             "Rimax","Pullman","Restonic","Rubbermaid","RTA Muebles",
-            "Sillas y Sillas","Spring","Steelcase","Sterilite","Tugó",
+            "Sillas y Sillas","Spring","Steelcase","Sterilite","Tugó","Vanyplast",
             "No aplica"
         ],
         "otros": [
