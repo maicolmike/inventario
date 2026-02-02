@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Dollarcity","Éxito Hogar","Falabella Home","H&M Home","Homecenter",
             "IKEA","Iluminatta","La Casa de las Velas","Manos de Oro","Miniso",
             "Mola Sasa","Nativos Colombia","Panamericana","Pepe Ganga Home",
-            "Raíces Ancestrales","Tierra Querida","Velas Santa Fe",
+            "Raíces Ancestrales","Rimax","Tierra Querida","Velas Santa Fe",
             "Wayuu Decor","Zara Home","No aplica"
         ],
         "electrodomesticos": [
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Arcopal","Brabantia","Casa Ideas","Corelle","Corona","Cuisinart",
             "Duralex","Ekco","Fackelmann","Home Elements","Ikea","Imusa",
             "Joseph Joseph","KitchenAid","Lock&Lock","Luminarc","Magefesa",
-            "Mainstays","Metaltex","OXO","Paderno","Pyrex","Rubbermaid",
+            "Mainstays","Metaltex","OXO","Paderno","Pyrex","Rimax","Rubbermaid",
             "Tescoma","Tefal","Tramontina","Tupperware","Victorinox",
             "Wilton","No aplica"
         ],
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "El Dorado","Falabella","Forma 5","Haworth","Herman Miller","Homecenter",
             "Home Elements","IKEA","Linea Italia","Maderkit","Muebles Jamar",
             "Muebles Rimo","Ofimuebles","Ofix","Organitodo","Paraíso",
-            "Plásticos Rimax","Pullman","Restonic","Rubbermaid","RTA Muebles",
+            "Rimax","Pullman","Restonic","Rubbermaid","RTA Muebles",
             "Sillas y Sillas","Spring","Steelcase","Sterilite","Tugó",
             "No aplica"
         ],

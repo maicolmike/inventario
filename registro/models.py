@@ -3,7 +3,7 @@ from django.db import models
 class Equipo(models.Model):
     codigo = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=255)
-    serial = models.CharField(max_length=100, unique=True)
+    serial = models.CharField(max_length=100)
     marca = models.CharField(max_length=150)
     modelo = models.CharField(max_length=150)
     color = models.CharField(max_length=50)
