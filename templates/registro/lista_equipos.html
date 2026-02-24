@@ -37,8 +37,8 @@
                     <th>Nit Proveedor</th>
                     <th>Proveedor</th>
                     <th>Observaciones</th>
-                    <th>Editar</th>
                     {% if user.is_superuser == 1 %}
+                    <th>Editar</th>
                     <th>Borrar</th>
                     {% endif %}
                 </tr>
@@ -76,6 +76,8 @@
                         {% endif %}
                     </td>
 
+                    {% if user.is_superuser == 1 %}
+
                     <!-- Botón Editar -->
                     <td class="text-center">
                         <a href="{% url 'editar_equipo' equipo.id %}" class="btn btn-success btn-sm">
@@ -83,7 +85,6 @@
                         </a>
                     </td>
 
-                    {% if user.is_superuser == 1 %}
                     <!-- Botón Eliminar -->
                     <td class="text-center">
                         <a href="{% url 'eliminar_equipo' equipo.id %}" class="btn btn-danger btn-sm"
