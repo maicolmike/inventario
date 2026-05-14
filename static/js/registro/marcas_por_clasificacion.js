@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Kalley","Karcher","KitchenAid","LG","Mabe","Maytag","Midea","Miele",
             "Ninja","Oster","Panasonic","Philips","PowerXL","Remington","Roborock",
             "Rowenta","Russell Hobbs","Samsung","Samurai","Sharp","Siemens","Smeg",
-            "Sunbeam","Taurus","Tefal","Teka","Trane","Ufesa","Westinghouse",
+            "Sunbeam","Taurus","Tefal","Teka","Trane", "Universal","Ufesa","Westinghouse",
             "Whirlpool","York","Zanussi","No aplica"
         ],
         "equipo de computo": [
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Aiwa","AKG","Behringer","BenQ","Bose","Cisco","Crestron","Epson",
             "Harman Kardon","Hisense","InFocus","JBL","Kalley","Kenwood","LG",
             "Logitech","Marshall","Motorola","NEC","Optoma","Panasonic","Philips",
-            "Poly","QSC","Samsung","Sennheiser","Sharp","Shure","Sony","TCL",
+            "Poly","QSC","Samsung","Sennheiser","Sharp","Shure","Sony","TCL","Universal",
             "ViewSonic","Yamaha","No aplica"
         ],
         "menaje": [
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Home Elements","IKEA","Lifetime","Linea Italia","Maderkit","Muebles Jamar",
             "Muebles Rimo","Ofimuebles","Ofix","Organitodo","Paraíso",
             "Rimax","Pullman","Restonic","Rubbermaid","RTA Muebles",
-            "Sillas y Sillas","Spring","Steelcase","Sterilite","Tugó","Vanyplast",
+            "Sillas y Sillas","Spring","Steelcase","Sterilite","Tugó","Universal","Vanyplast",
             "No aplica"
         ],
         "otros": [
